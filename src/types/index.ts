@@ -89,5 +89,4 @@ export interface QuizState {
 export interface AppSettings {
   id: "app-settings";
   newCardsPerDay: number;
-  claudeApiKey?: string;
 }

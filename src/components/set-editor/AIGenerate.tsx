@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { getSettings } from "../../lib/storage";
+import { useState } from "react";
 import { generateSet, type GeneratedSet } from "../../lib/generate-set";
 import { Button } from "../ui/Button";
 
@@ -9,36 +7,12 @@ interface AIGenerateProps {
 }
 
 export function AIGenerate({ onGenerated }: AIGenerateProps) {
-  const [apiKey, setApiKey] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
   const [topic, setTopic] = useState("");
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    getSettings().then((s) => {
-      setApiKey(s.claudeApiKey ?? null);
-      setLoading(false);
-    });
-  }, []);
-
-  if (loading) return null;
-
-  if (!apiKey) {
-    return (
-      <div className="border border-border rounded-[var(--radius)] bg-surface-sunken p-4 text-center">
-        <p className="text-sm text-text-secondary mb-2">
-          Add your Claude API key in{" "}
-          <Link
-            to="/settings"
-            className="font-semibold text-primary hover:text-primary-hover"
-          >
-            Settings
-          </Link>{" "}
-          to generate sets with AI.
-        </p>
-      </div>
-    );
+  if (!__ANTHROPIC_API_KEY__) {
+    return null;
   }
 
   const handleGenerate = async () => {
@@ -46,7 +20,7 @@ export function AIGenerate({ onGenerated }: AIGenerateProps) {
     setGenerating(true);
     setError(null);
     try {
-      const data = await generateSet(apiKey, topic.trim());
+      const data = await generateSet(topic.trim());
       onGenerated(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Generation failed");

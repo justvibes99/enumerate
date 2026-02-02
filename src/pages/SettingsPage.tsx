@@ -98,35 +98,6 @@ export function SettingsPage() {
 
       <Card className="mb-4">
         <h2 className="font-heading text-xl text-text-primary mb-4">
-          AI Generation
-        </h2>
-        <div className="mb-4">
-          <label className="block text-sm font-body font-medium text-text-secondary mb-1">
-            Claude API Key
-          </label>
-          <input
-            type="password"
-            value={settings.claudeApiKey ?? ""}
-            onChange={(e) =>
-              setSettings({
-                ...settings,
-                claudeApiKey: e.target.value || undefined,
-              })
-            }
-            placeholder="sk-ant-..."
-            className="w-full bg-white border border-border rounded-[var(--radius-sm)] px-3 py-2 text-sm font-body font-mono text-text-primary placeholder:text-text-tertiary outline-none focus:border-primary focus:shadow-focus max-w-sm"
-          />
-          <p className="text-xs text-text-tertiary mt-1">
-            Used to generate study sets with Claude. Stored locally in your browser.
-          </p>
-        </div>
-        <Button onClick={handleSave} size="sm">
-          {saved ? "Saved!" : "Save Settings"}
-        </Button>
-      </Card>
-
-      <Card className="mb-4">
-        <h2 className="font-heading text-xl text-text-primary mb-4">
           Data Management
         </h2>
         <div className="flex flex-col gap-4">

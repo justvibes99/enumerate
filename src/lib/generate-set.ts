@@ -7,9 +7,13 @@ export interface GeneratedSet {
 }
 
 export async function generateSet(
-  apiKey: string,
   topic: string,
 ): Promise<GeneratedSet> {
+  const apiKey = __ANTHROPIC_API_KEY__;
+  if (!apiKey) {
+    throw new Error("ANTHROPIC_API_KEY environment variable is not set");
+  }
+
   const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
