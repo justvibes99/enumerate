@@ -69,7 +69,7 @@ export function FlashcardMode({
         <div className={`flip-card-inner relative w-full ${flipped ? "flipped" : ""}`} style={{ minHeight: "300px" }}>
           {/* Front */}
           <div
-            className="flip-card-front absolute inset-0 border border-border shadow-lg rounded-[var(--radius)] p-8 flex flex-col items-center justify-center bg-surface-raised
+            className="flip-card-front absolute inset-0 border border-border shadow-lg rounded-[var(--radius)] p-6 flex flex-col items-center justify-center bg-surface-raised
               hover:shadow-md transition-all duration-150"
           >
             <span className="text-xs font-body font-medium text-text-tertiary mb-4">
@@ -84,7 +84,7 @@ export function FlashcardMode({
           </div>
           {/* Back */}
           <div
-            className="flip-card-back absolute inset-0 border border-border shadow-lg rounded-[var(--radius)] p-8 flex flex-col items-center justify-center"
+            className="flip-card-back absolute inset-0 border border-border shadow-lg rounded-[var(--radius)] p-6 flex flex-col items-center justify-center"
             style={{ backgroundColor: dataSet.accentColor }}
           >
             <span className="text-xs font-body font-medium text-text-primary/60 mb-4">

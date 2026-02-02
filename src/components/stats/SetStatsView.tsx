@@ -14,7 +14,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
   const offset = circumference - (masteredPct / 100) * circumference;
 
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-8 mb-8">
+    <div className="flex flex-col sm:flex-row items-center gap-6 mb-5">
       {/* Donut chart */}
       <div className="relative">
         <svg width="160" height="160" className="transform -rotate-90">

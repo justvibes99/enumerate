@@ -42,15 +42,15 @@ export function StatsPage() {
       >
         ← Back to {dataSet.title}
       </Link>
-      <h1 className="font-heading text-3xl text-text-primary mt-4 mb-6">
-        {dataSet.icon} {dataSet.title} — Stats
+      <h1 className="font-heading text-3xl text-text-primary mt-4 mb-4">
+        {dataSet.title} — Stats
       </h1>
 
       {progress && <SetStatsView progress={progress} />}
       <StreakCalendar dataSetId={dataSet.id} />
       <ItemBreakdown dataSet={dataSet} />
 
-      <div className="mt-8">
+      <div className="mt-5">
         <Link to={`/set/${dataSet.id}`}>
           <Button variant="secondary">Back to Set</Button>
         </Link>

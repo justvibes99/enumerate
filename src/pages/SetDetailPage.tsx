@@ -57,7 +57,7 @@ export function SetDetailPage() {
         direction={direction}
         onDirectionChange={setDirection}
       />
-      <div className="flex gap-3 mb-6">
+      <div className="flex gap-3 mb-4">
         <Link to={`/set/${dataSet.id}/stats`}>
           <Button variant="secondary" size="sm">
             View Stats

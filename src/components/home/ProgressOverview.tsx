@@ -19,11 +19,11 @@ export function ProgressOverview({
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className={`${stat.bg} border border-border rounded-[var(--radius)] shadow-sm p-4 text-center`}
+          className={`${stat.bg} border border-border rounded-[var(--radius)] shadow-sm p-3 text-center`}
         >
           <div className="font-mono font-bold text-2xl text-text-primary">
             {stat.value}

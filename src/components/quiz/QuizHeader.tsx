@@ -24,7 +24,7 @@ export function QuizHeader({
 
   return (
     <>
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-4 mb-4">
         <Button
           variant="secondary"
           size="sm"

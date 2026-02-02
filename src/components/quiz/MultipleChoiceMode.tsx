@@ -55,7 +55,7 @@ export function MultipleChoiceMode({
     <div>
       {/* Prompt */}
       <div
-        className="border border-border rounded-[var(--radius)] shadow-lg p-8 mb-6 text-center"
+        className="border border-border rounded-[var(--radius)] shadow-lg p-6 mb-4 text-center"
         style={{ backgroundColor: dataSet.accentColor }}
       >
         <span className="text-xs font-body font-medium text-text-primary/60 block mb-2">

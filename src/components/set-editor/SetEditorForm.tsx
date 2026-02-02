@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import type { DataSet } from "../../types";
+import type { GeneratedSet } from "../../lib/generate-set";
 import { saveDataSet } from "../../lib/storage";
 import { Input, Textarea } from "../ui/Input";
 import { Button } from "../ui/Button";
@@ -18,9 +19,10 @@ const ACCENT_COLORS = [
 
 interface SetEditorFormProps {
   existingSet?: DataSet;
+  aiData?: GeneratedSet;
 }
 
-export function SetEditorForm({ existingSet }: SetEditorFormProps) {
+export function SetEditorForm({ existingSet, aiData }: SetEditorFormProps) {
   const navigate = useNavigate();
   const [title, setTitle] = useState(existingSet?.title ?? "");
   const [description, setDescription] = useState(
@@ -45,6 +47,22 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
   );
   const [showBulkImport, setShowBulkImport] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
+
+  // Populate form when AI data arrives
+  useEffect(() => {
+    if (!aiData) return;
+    setTitle(aiData.title);
+    setDescription(aiData.description);
+    setPromptLabel(aiData.promptLabel);
+    setMatchLabel(aiData.matchLabel);
+    setItems(
+      aiData.items.map((i) => ({
+        id: crypto.randomUUID(),
+        prompt: i.prompt,
+        match: i.match,
+      })),
+    );
+  }, [aiData]);
 
   const handleSave = async () => {
     const newErrors: string[] = [];
@@ -112,7 +130,7 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
 
   return (
     <div>
-      <div className="space-y-4 mb-8">
+      <div className="space-y-4 mb-5">
         <div>
           <label className="block text-sm font-body font-medium text-text-secondary mb-1">
             Title
@@ -176,8 +194,8 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
       </div>
 
       {/* Items */}
-      <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
+      <div className="mb-4">
+        <div className="flex items-center justify-between mb-3">
           <h3 className="font-heading text-lg text-text-primary">
             Items ({items.length})
           </h3>

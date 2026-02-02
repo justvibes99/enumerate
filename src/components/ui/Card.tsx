@@ -26,7 +26,7 @@ export function Card({
 
   return (
     <div
-      className={`bg-surface-raised border border-border shadow-md rounded-[var(--radius)] p-6
+      className={`bg-surface-raised border border-border shadow-md rounded-[var(--radius)] p-4
         ${hoverable ? "transition-all duration-150 cursor-pointer hover:shadow-lg" : ""}
         ${className}`}
       style={accentStyle}

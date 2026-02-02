@@ -41,7 +41,7 @@ export function StreakCalendar({ dataSetId }: StreakCalendarProps) {
   }
 
   return (
-    <div className="mb-8">
+    <div className="mb-5">
       <h3 className="font-heading text-lg text-text-primary mb-3">
         Activity (Last 60 Days)
       </h3>

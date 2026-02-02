@@ -29,7 +29,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
         <div className="border-b border-border px-6 py-4">
           <h2 className="font-heading text-xl text-text-primary">{title}</h2>
         </div>
-        <div className="p-6">{children}</div>
+        <div className="p-5">{children}</div>
       </div>
     </div>
   );

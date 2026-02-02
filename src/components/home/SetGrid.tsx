@@ -17,25 +17,22 @@ function SetCard({ dataSet }: SetCardProps) {
   return (
     <Link to={`/set/${dataSet.id}`} className="no-underline">
       <Card accentColor={dataSet.accentColor} hoverable>
-        <div className="flex items-start gap-3">
-          <span className="text-3xl">{dataSet.icon}</span>
-          <div className="flex-1 min-w-0">
-            <h3 className="font-heading text-lg text-text-primary truncate">
-              {dataSet.title}
-            </h3>
-            <p className="text-sm text-text-secondary mt-1">{dataSet.description}</p>
-            <div className="flex items-center gap-3 mt-3">
+        <div>
+          <h3 className="font-heading text-lg text-text-primary truncate">
+            {dataSet.title}
+          </h3>
+          <p className="text-sm text-text-secondary mt-1">{dataSet.description}</p>
+          <div className="flex items-center gap-3 mt-2">
+            <span className="font-mono text-xs text-text-tertiary">
+              {dataSet.items.length} items
+            </span>
+            {progress && (
               <span className="font-mono text-xs text-text-tertiary">
-                {dataSet.items.length} items
+                {masteredPct}% mastered
               </span>
-              {progress && (
-                <span className="font-mono text-xs text-text-tertiary">
-                  {masteredPct}% mastered
-                </span>
-              )}
-            </div>
-            <ProgressBar value={masteredPct} className="mt-2" />
+            )}
           </div>
+          <ProgressBar value={masteredPct} className="mt-2" />
         </div>
       </Card>
     </Link>
@@ -58,7 +55,7 @@ export function SetGrid({ dataSets }: SetGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
       {dataSets.map((ds) => (
         <SetCard key={ds.id} dataSet={ds} />
       ))}

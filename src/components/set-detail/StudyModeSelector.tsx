@@ -46,7 +46,7 @@ export function StudyModeSelector({
   ];
 
   return (
-    <div className="mb-8">
+    <div className="mb-5">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <h2 className="font-heading text-xl text-text-primary">Study Modes</h2>
         <Toggle
@@ -59,12 +59,12 @@ export function StudyModeSelector({
           }
         />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {modes.map((mode) =>
           mode.enabled ? (
             <Link key={mode.title} to={mode.to} className="no-underline">
               <div
-                className={`${mode.bg} border border-border shadow-sm rounded-[var(--radius)] p-6 text-center
+                className={`${mode.bg} border border-border shadow-sm rounded-[var(--radius)] p-4 text-center
                   transition-all duration-150 cursor-pointer
                   hover:shadow-lg active:scale-[0.98]`}
               >
@@ -77,7 +77,7 @@ export function StudyModeSelector({
           ) : (
             <div
               key={mode.title}
-              className="bg-surface-sunken border border-border/50 rounded-[var(--radius)] p-6 text-center opacity-50"
+              className="bg-surface-sunken border border-border/50 rounded-[var(--radius)] p-4 text-center opacity-50"
             >
               <h3 className="font-heading text-lg text-text-tertiary">
                 {mode.title}

@@ -35,7 +35,7 @@ export function ItemTable({ dataSet }: ItemTableProps) {
   };
 
   return (
-    <div className="mb-8">
+    <div className="mb-5">
       <h2 className="font-heading text-xl text-text-primary mb-4">
         Items ({dataSet.items.length})
       </h2>

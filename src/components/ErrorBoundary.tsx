@@ -24,7 +24,6 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <div className="min-h-screen bg-surface flex items-center justify-center p-4">
           <div className="bg-surface-raised border border-border shadow-lg rounded-[var(--radius)] p-8 max-w-md text-center">
-            <div className="text-4xl mb-4">😵</div>
             <h1 className="font-heading text-2xl text-text-primary mb-2">
               Something went wrong
             </h1>

@@ -15,7 +15,7 @@ export function DueReviewBanner({
   const topSet = dueSets.sort((a, b) => b.count - a.count)[0];
 
   return (
-    <div className="bg-primary-light border border-primary/30 shadow-md rounded-[var(--radius)] p-6 mb-6">
+    <div className="bg-primary-light border border-primary/30 shadow-md rounded-[var(--radius)] p-4 mb-4">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <p className="font-heading text-lg text-text-primary">

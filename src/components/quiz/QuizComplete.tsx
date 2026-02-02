@@ -24,8 +24,10 @@ export function QuizComplete({ dataSet, results }: QuizCompleteProps) {
 
   return (
     <div className="max-w-lg mx-auto text-center">
-      <Card className="mb-6">
-        <div className="text-5xl mb-4">{pct >= 80 ? "🎉" : pct >= 50 ? "👍" : "💪"}</div>
+      <Card className="mb-4">
+        <p className="font-heading text-xl text-text-secondary mb-2">
+          {pct >= 80 ? "Excellent" : pct >= 50 ? "Good effort" : "Keep practicing"}
+        </p>
         <h2 className="font-heading text-2xl text-text-primary mb-2">
           Session Complete!
         </h2>
@@ -53,7 +55,7 @@ export function QuizComplete({ dataSet, results }: QuizCompleteProps) {
       </Card>
 
       {missedItems.length > 0 && (
-        <Card className="mb-6 text-left">
+        <Card className="mb-4 text-left">
           <h3 className="font-heading text-lg text-text-primary mb-3">
             Items to Review
           </h3>

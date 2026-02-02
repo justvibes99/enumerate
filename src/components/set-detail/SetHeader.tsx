@@ -11,21 +11,15 @@ interface SetHeaderProps {
 
 export function SetHeader({ dataSet, progress }: SetHeaderProps) {
   return (
-    <div className="mb-8">
+    <div className="mb-5">
       <Link
         to="/"
         className="text-sm font-body font-medium text-text-secondary no-underline hover:text-text-primary"
       >
         ← Back to sets
       </Link>
-      <div className="mt-4 flex items-start gap-4">
-        <div
-          className="text-5xl p-3 border border-border rounded-[var(--radius)] shadow-sm"
-          style={{ backgroundColor: dataSet.accentColor }}
-        >
-          {dataSet.icon}
-        </div>
-        <div className="flex-1">
+      <div className="mt-4">
+        <div>
           <h1 className="font-heading text-3xl text-text-primary">
             {dataSet.title}
           </h1>
@@ -57,5 +51,6 @@ export function SetHeader({ dataSet, progress }: SetHeaderProps) {
         </div>
       </div>
     </div>
+
   );
 }
