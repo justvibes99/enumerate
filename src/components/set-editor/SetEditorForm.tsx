@@ -12,9 +12,9 @@ const ACCENT_COLORS = [
   "#2A664D",
   "#BA7C64",
   "#7D2827",
-  "#252E48",
+  "#496462",
   "#58402F",
-  "#796855",
+  "#96AA91",
 ];
 
 interface SetEditorFormProps {
