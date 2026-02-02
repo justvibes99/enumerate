@@ -55,13 +55,13 @@ export function MultipleChoiceMode({
     <div>
       {/* Prompt */}
       <div
-        className="border-3 border-ink rounded shadow-brutal-lg p-8 mb-6 text-center"
+        className="border border-border rounded-[var(--radius)] shadow-lg p-8 mb-6 text-center"
         style={{ backgroundColor: dataSet.accentColor }}
       >
-        <span className="text-xs font-heading uppercase tracking-wider text-ink/40 block mb-2">
+        <span className="text-xs font-body font-medium text-text-primary/60 block mb-2">
           {promptLabel}
         </span>
-        <span className="font-heading font-bold text-3xl text-ink">
+        <span className="font-heading text-3xl text-text-primary">
           {prompt}
         </span>
       </div>
@@ -69,10 +69,10 @@ export function MultipleChoiceMode({
       {/* Options */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {options.map((option) => {
-          let bg = "bg-white";
+          let classes = "bg-surface-raised border-border";
           if (answered) {
-            if (option === correctAnswer) bg = "bg-teal";
-            else if (option === selected) bg = "bg-coral";
+            if (option === correctAnswer) classes = "bg-success-light border-success/30";
+            else if (option === selected) classes = "bg-error-light border-error/30";
           }
 
           return (
@@ -80,11 +80,11 @@ export function MultipleChoiceMode({
               key={option}
               onClick={() => handleSelect(option)}
               disabled={answered}
-              className={`${bg} border-3 border-ink rounded p-4 text-left
-                font-heading font-bold text-lg text-ink
-                transition-all duration-100
-                ${!answered ? "shadow-brutal cursor-pointer hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm" : "shadow-none"}
-                ${answered && option === correctAnswer ? "shadow-brutal" : ""}
+              className={`${classes} border rounded-[var(--radius-sm)] p-4 text-left
+                font-body font-semibold text-lg text-text-primary
+                transition-all duration-150
+                ${!answered ? "shadow-sm cursor-pointer hover:shadow-md active:scale-[0.98]" : "shadow-none"}
+                ${answered && option === correctAnswer ? "shadow-sm" : ""}
               `}
             >
               {option}

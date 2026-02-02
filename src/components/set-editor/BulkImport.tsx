@@ -52,7 +52,7 @@ export function BulkImport({ open, onClose, onImport }: BulkImportProps) {
 
   return (
     <Modal open={open} onClose={onClose} title="Bulk Import">
-      <p className="text-sm text-ink/60 mb-3">
+      <p className="text-sm text-text-secondary mb-3">
         Paste tab-separated or comma-separated data. One pair per line.
       </p>
       <Textarea
@@ -62,7 +62,7 @@ export function BulkImport({ open, onClose, onImport }: BulkImportProps) {
         rows={8}
       />
       {error && (
-        <p className="text-sm text-coral font-bold mt-2">{error}</p>
+        <p className="text-sm text-error font-bold mt-2">{error}</p>
       )}
       <div className="flex gap-3 mt-4">
         <Button onClick={handleImport}>Import</Button>

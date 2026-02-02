@@ -78,9 +78,9 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
   });
 
   const statusColor = {
-    new: "cream" as const,
-    learning: "yellow" as const,
-    mastered: "teal" as const,
+    new: "neutral" as const,
+    learning: "warning" as const,
+    mastered: "success" as const,
   };
 
   const SortHeader = ({
@@ -91,7 +91,7 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
     sortKey: SortKey;
   }) => (
     <th
-      className="text-left px-3 py-2 font-heading text-xs font-bold cursor-pointer hover:bg-ink/10"
+      className="text-left px-3 py-2 text-xs font-body font-semibold cursor-pointer hover:bg-surface-raised"
       onClick={() => handleSort(sortKey)}
     >
       {label} {sortBy === sortKey ? (sortAsc ? "↑" : "↓") : ""}
@@ -100,15 +100,15 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
 
   return (
     <div>
-      <h3 className="font-heading font-bold text-lg text-ink mb-3">
+      <h3 className="font-heading text-lg text-text-primary mb-3">
         Item Breakdown
       </h3>
-      <div className="border-3 border-ink rounded overflow-x-auto">
+      <div className="border border-border rounded-[var(--radius)] overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-ink text-cream">
+            <tr className="bg-surface-sunken text-text-secondary">
               <SortHeader label="Prompt" sortKey="prompt" />
-              <th className="text-left px-3 py-2 font-heading text-xs font-bold">
+              <th className="text-left px-3 py-2 text-xs font-body font-semibold">
                 Match
               </th>
               <SortHeader label="Status" sortKey="status" />
@@ -130,7 +130,7 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
               return (
                 <tr
                   key={item.id}
-                  className={`border-t-2 border-ink/10 ${i % 2 === 0 ? "bg-cream" : "bg-white"}`}
+                  className={`border-t border-border ${i % 2 === 0 ? "bg-surface-raised" : "bg-surface-sunken"}`}
                 >
                   <td className="px-3 py-2 font-medium">{item.prompt}</td>
                   <td className="px-3 py-2">{item.match}</td>

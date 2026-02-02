@@ -20,16 +20,16 @@ function SetCard({ dataSet }: SetCardProps) {
         <div className="flex items-start gap-3">
           <span className="text-3xl">{dataSet.icon}</span>
           <div className="flex-1 min-w-0">
-            <h3 className="font-heading font-bold text-lg text-ink truncate">
+            <h3 className="font-heading text-lg text-text-primary truncate">
               {dataSet.title}
             </h3>
-            <p className="text-sm text-ink/60 mt-1">{dataSet.description}</p>
+            <p className="text-sm text-text-secondary mt-1">{dataSet.description}</p>
             <div className="flex items-center gap-3 mt-3">
-              <span className="font-mono text-xs text-ink/60">
+              <span className="font-mono text-xs text-text-tertiary">
                 {dataSet.items.length} items
               </span>
               {progress && (
-                <span className="font-mono text-xs text-ink/60">
+                <span className="font-mono text-xs text-text-tertiary">
                   {masteredPct}% mastered
                 </span>
               )}
@@ -50,7 +50,7 @@ export function SetGrid({ dataSets }: SetGridProps) {
   if (dataSets.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="font-heading text-xl text-ink/50">
+        <p className="font-heading text-xl text-text-tertiary">
           No sets yet. Create one to get started!
         </p>
       </div>

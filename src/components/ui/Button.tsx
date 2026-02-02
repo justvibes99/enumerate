@@ -9,11 +9,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses = {
   primary:
-    "bg-yellow text-ink border-3 border-ink shadow-brutal hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm active:translate-x-[4px] active:translate-y-[4px] active:shadow-none",
+    "bg-primary text-white border border-primary hover:bg-primary-hover hover:shadow-md active:scale-[0.98]",
   secondary:
-    "bg-cream text-ink border-3 border-ink shadow-brutal hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm active:translate-x-[4px] active:translate-y-[4px] active:shadow-none",
+    "bg-surface-raised text-text-primary border border-border hover:border-border-strong hover:shadow-md active:scale-[0.98]",
   danger:
-    "bg-coral text-ink border-3 border-ink shadow-brutal hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm active:translate-x-[4px] active:translate-y-[4px] active:shadow-none",
+    "bg-error text-white border border-error hover:bg-error/90 hover:shadow-md active:scale-[0.98]",
 };
 
 const sizeClasses = {
@@ -33,11 +33,11 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`font-heading font-bold rounded transition-all duration-100 cursor-pointer
+      className={`font-body font-semibold rounded-[var(--radius-sm)] transition-all duration-150 cursor-pointer shadow-sm
         ${variantClasses[variant]}
         ${sizeClasses[size]}
         ${fullWidth ? "w-full" : ""}
-        ${disabled ? "opacity-50 cursor-not-allowed translate-x-0 translate-y-0 shadow-brutal" : ""}
+        ${disabled ? "opacity-50 cursor-not-allowed shadow-sm" : ""}
         ${className}`}
       disabled={disabled}
       {...props}

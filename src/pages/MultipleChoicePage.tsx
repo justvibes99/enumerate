@@ -43,7 +43,7 @@ export function MultipleChoicePage() {
   if (loading || !dataSet) {
     return (
       <PageContainer>
-        <p className="text-center py-16 font-heading text-xl text-ink/50">
+        <p className="text-center py-16 font-heading text-xl text-text-tertiary">
           Loading...
         </p>
       </PageContainer>
@@ -65,7 +65,7 @@ export function MultipleChoicePage() {
   if (!currentCard) {
     return (
       <PageContainer>
-        <p className="text-center py-16 font-heading text-xl text-ink/50">
+        <p className="text-center py-16 font-heading text-xl text-text-tertiary">
           No cards available for review. Check back later!
         </p>
       </PageContainer>

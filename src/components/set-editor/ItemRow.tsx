@@ -23,7 +23,7 @@ export function ItemRow({
 }: ItemRowProps) {
   return (
     <div className="flex items-center gap-2">
-      <span className="font-mono text-sm text-ink/40 w-8 text-right shrink-0">
+      <span className="font-mono text-sm text-text-tertiary w-8 text-right shrink-0">
         {index + 1}
       </span>
       <Input
@@ -40,8 +40,8 @@ export function ItemRow({
       />
       <button
         onClick={onDelete}
-        className="w-10 h-10 border-3 border-ink rounded bg-cream text-ink font-bold
-          cursor-pointer transition-all duration-100 hover:bg-coral shrink-0"
+        className="w-10 h-10 border border-border rounded-[var(--radius-sm)] bg-surface-raised text-text-secondary font-bold
+          cursor-pointer transition-all duration-150 hover:bg-error-light hover:text-error hover:border-error/30 shrink-0"
       >
         ✕
       </button>

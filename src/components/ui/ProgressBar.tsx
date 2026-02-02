@@ -6,10 +6,10 @@ interface ProgressBarProps {
 export function ProgressBar({ value, className = "" }: ProgressBarProps) {
   return (
     <div
-      className={`border-3 border-ink rounded bg-cream h-3 overflow-hidden ${className}`}
+      className={`border border-border rounded-full bg-surface-sunken h-2.5 overflow-hidden ${className}`}
     >
       <div
-        className="h-full bg-teal transition-all duration-200"
+        className="h-full bg-success rounded-full transition-all duration-200"
         style={{ width: `${Math.min(100, Math.max(0, value))}%` }}
       />
     </div>
@@ -35,14 +35,14 @@ export function SegmentedProgressBar({
 
   return (
     <div
-      className={`border-3 border-ink rounded bg-cream h-3 overflow-hidden flex ${className}`}
+      className={`border border-border rounded-full bg-surface-sunken h-2.5 overflow-hidden flex ${className}`}
     >
       <div
-        className="h-full bg-teal transition-all duration-200"
+        className="h-full bg-success transition-all duration-200"
         style={{ width: `${correctPct}%` }}
       />
       <div
-        className="h-full bg-coral transition-all duration-200"
+        className="h-full bg-error transition-all duration-200"
         style={{ width: `${incorrectPct}%` }}
       />
     </div>

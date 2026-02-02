@@ -33,38 +33,38 @@ export function StreakCalendar({ dataSetId }: StreakCalendarProps) {
   const maxCount = Math.max(1, ...Array.from(dayCounts.values()));
 
   function getColor(count: number): string {
-    if (count === 0) return "#FFF8E7"; // cream
+    if (count === 0) return "#F5F3EF"; // surface-sunken
     const ratio = count / maxCount;
-    if (ratio < 0.33) return "#95E1D3"; // mint
-    if (ratio < 0.66) return "#4ECDC4"; // teal
-    return "#FF6B6B"; // coral
+    if (ratio < 0.33) return "#EEF5F1"; // success-light
+    if (ratio < 0.66) return "#5B8A72"; // success
+    return "#C06840"; // primary
   }
 
   return (
     <div className="mb-8">
-      <h3 className="font-heading font-bold text-lg text-ink mb-3">
+      <h3 className="font-heading text-lg text-text-primary mb-3">
         Activity (Last 60 Days)
       </h3>
-      <div className="border-3 border-ink rounded p-4 bg-white inline-block">
+      <div className="border border-border rounded-[var(--radius)] p-4 bg-surface-raised inline-block">
         <div className="flex flex-wrap gap-1" style={{ maxWidth: "330px" }}>
           {days.map((day) => {
             const count = dayCounts.get(day) ?? 0;
             return (
               <div
                 key={day}
-                className="w-4 h-4 border border-ink/20 rounded-sm"
+                className="w-4 h-4 border border-border rounded-sm"
                 style={{ backgroundColor: getColor(count) }}
                 title={`${day}: ${count} session${count !== 1 ? "s" : ""}`}
               />
             );
           })}
         </div>
-        <div className="flex items-center gap-2 mt-2 text-xs text-ink/60">
+        <div className="flex items-center gap-2 mt-2 text-xs text-text-secondary">
           <span>Less</span>
-          <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#FFF8E7", border: "1px solid #2D2D2D33" }} />
-          <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#95E1D3" }} />
-          <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#4ECDC4" }} />
-          <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#FF6B6B" }} />
+          <div className="w-3 h-3 rounded-sm border border-border" style={{ backgroundColor: "#F5F3EF" }} />
+          <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#EEF5F1" }} />
+          <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#5B8A72" }} />
+          <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#C06840" }} />
           <span>More</span>
         </div>
       </div>

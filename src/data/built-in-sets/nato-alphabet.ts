@@ -5,7 +5,7 @@ export const natoAlphabet: DataSet = {
   title: "NATO Phonetic Alphabet",
   description: "The 26 NATO phonetic alphabet code words",
   icon: "📡",
-  accentColor: "#4ECDC4",
+  accentColor: "#5B8A72",
   promptLabel: "Letter",
   matchLabel: "Code Word",
   isBuiltIn: true,

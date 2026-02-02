@@ -5,7 +5,7 @@ export const usStateCapitals: DataSet = {
   title: "US State Capitals",
   description: "All 50 US states and their capital cities",
   icon: "🏛️",
-  accentColor: "#4ECDC4",
+  accentColor: "#5B8A72",
   promptLabel: "State",
   matchLabel: "Capital",
   isBuiltIn: true,

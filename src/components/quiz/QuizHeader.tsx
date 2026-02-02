@@ -39,7 +39,7 @@ export function QuizHeader({
             total={totalCards}
           />
         </div>
-        <span className="font-mono text-sm text-ink/60 whitespace-nowrap">
+        <span className="font-mono text-sm text-text-secondary whitespace-nowrap">
           {currentIndex + 1} / {totalCards}
         </span>
       </div>
@@ -48,7 +48,7 @@ export function QuizHeader({
         onClose={() => setShowQuit(false)}
         title="Quit Session?"
       >
-        <p className="text-ink mb-4">
+        <p className="text-text-primary mb-4">
           Your progress in this session won't be saved. Cards you've already
           answered have been recorded.
         </p>

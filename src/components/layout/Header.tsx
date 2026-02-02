@@ -2,29 +2,29 @@ import { Link } from "react-router-dom";
 
 export function Header() {
   return (
-    <header className="border-b-4 border-ink bg-white">
+    <header className="border-b border-border bg-surface-raised">
       <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="no-underline">
-          <h1 className="font-heading font-bold text-3xl md:text-4xl text-ink tracking-tight">
-            ENUMERATE
+          <h1 className="font-heading text-3xl md:text-4xl text-text-primary tracking-tight">
+            Enumerate
           </h1>
         </Link>
         <nav className="flex items-center gap-3">
           <Link
             to="/set/new"
-            className="bg-yellow text-ink border-3 border-ink shadow-brutal rounded px-4 py-2
-              font-heading font-bold text-sm transition-all duration-100 no-underline
-              hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm
-              active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+            className="bg-primary text-white border border-primary shadow-sm rounded-[var(--radius-sm)] px-4 py-2
+              font-body font-semibold text-sm transition-all duration-150 no-underline
+              hover:bg-primary-hover hover:shadow-md
+              active:scale-[0.98]"
           >
-            + CREATE SET
+            + Create Set
           </Link>
           <Link
             to="/settings"
-            className="bg-cream text-ink border-3 border-ink shadow-brutal rounded px-4 py-2
-              font-heading font-bold text-sm transition-all duration-100 no-underline
-              hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm
-              active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+            className="bg-surface-raised text-text-primary border border-border shadow-sm rounded-[var(--radius-sm)] px-4 py-2
+              font-body font-semibold text-sm transition-all duration-150 no-underline
+              hover:border-border-strong hover:shadow-md
+              active:scale-[0.98]"
           >
             Settings
           </Link>

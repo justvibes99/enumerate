@@ -5,7 +5,7 @@ export const famousInventions: DataSet = {
   title: "Famous Inventions",
   description: "40 notable inventions and who invented them",
   icon: "💡",
-  accentColor: "#AA96DA",
+  accentColor: "#C06840",
   promptLabel: "Invention",
   matchLabel: "Inventor",
   isBuiltIn: true,

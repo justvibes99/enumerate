@@ -5,7 +5,7 @@ export const greekAlphabet: DataSet = {
   title: "Greek Alphabet",
   description: "All 24 letters of the Greek alphabet",
   icon: "🏛️",
-  accentColor: "#AA96DA",
+  accentColor: "#C06840",
   promptLabel: "Letter",
   matchLabel: "Name",
   isBuiltIn: true,

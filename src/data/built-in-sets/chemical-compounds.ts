@@ -5,7 +5,7 @@ export const chemicalCompounds: DataSet = {
   title: "Chemical Compounds",
   description: "40 common chemical compounds and their formulas",
   icon: "🧪",
-  accentColor: "#4ECDC4",
+  accentColor: "#5B8A72",
   promptLabel: "Compound",
   matchLabel: "Formula",
   isBuiltIn: true,

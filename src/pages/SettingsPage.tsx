@@ -58,20 +58,20 @@ export function SettingsPage() {
     <PageContainer className="max-w-2xl">
       <Link
         to="/"
-        className="text-sm font-heading font-bold text-ink/60 no-underline hover:text-ink"
+        className="text-sm font-body font-medium text-text-secondary no-underline hover:text-text-primary"
       >
         ← Back to Home
       </Link>
-      <h1 className="font-heading font-bold text-3xl text-ink mt-4 mb-6">
+      <h1 className="font-heading text-3xl text-text-primary mt-4 mb-6">
         Settings
       </h1>
 
       <Card className="mb-6">
-        <h2 className="font-heading font-bold text-xl text-ink mb-4">
+        <h2 className="font-heading text-xl text-text-primary mb-4">
           Study Settings
         </h2>
         <div className="mb-4">
-          <label className="block text-sm font-heading font-bold uppercase tracking-wider text-ink mb-1">
+          <label className="block text-sm font-body font-medium text-text-secondary mb-1">
             New Cards Per Day (per set)
           </label>
           <Input
@@ -87,7 +87,7 @@ export function SettingsPage() {
             }
             className="max-w-32"
           />
-          <p className="text-xs text-ink/50 mt-1">
+          <p className="text-xs text-text-tertiary mt-1">
             Maximum number of new cards introduced per study session.
           </p>
         </div>
@@ -97,12 +97,12 @@ export function SettingsPage() {
       </Card>
 
       <Card className="mb-6">
-        <h2 className="font-heading font-bold text-xl text-ink mb-4">
+        <h2 className="font-heading text-xl text-text-primary mb-4">
           Data Management
         </h2>
         <div className="flex flex-col gap-4">
           <div>
-            <p className="text-sm text-ink/60 mb-2">
+            <p className="text-sm text-text-secondary mb-2">
               Export all your data as a JSON file for backup.
             </p>
             <Button variant="secondary" size="sm" onClick={handleExport}>
@@ -110,10 +110,10 @@ export function SettingsPage() {
             </Button>
           </div>
           <div>
-            <p className="text-sm text-ink/60 mb-2">
+            <p className="text-sm text-text-secondary mb-2">
               Import data from a backup file. This merges with existing data.
             </p>
-            <label className="inline-block bg-cream text-ink border-3 border-ink shadow-brutal rounded px-4 py-2 font-heading font-bold text-sm cursor-pointer transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm">
+            <label className="inline-block bg-surface-raised text-text-primary border border-border shadow-sm rounded-[var(--radius-sm)] px-4 py-2 font-body font-semibold text-sm cursor-pointer transition-all duration-150 hover:border-border-strong hover:shadow-md">
               Import Data
               <input
                 type="file"
@@ -123,7 +123,7 @@ export function SettingsPage() {
               />
             </label>
             {importStatus && (
-              <p className="text-sm font-bold text-ink mt-2">{importStatus}</p>
+              <p className="text-sm font-bold text-text-primary mt-2">{importStatus}</p>
             )}
           </div>
         </div>

@@ -69,28 +69,28 @@ export function FlashcardMode({
         <div className={`flip-card-inner relative w-full ${flipped ? "flipped" : ""}`} style={{ minHeight: "300px" }}>
           {/* Front */}
           <div
-            className="flip-card-front absolute inset-0 border-3 border-ink shadow-brutal-lg rounded p-8 flex flex-col items-center justify-center bg-cream
-              hover:shadow-brutal hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100"
+            className="flip-card-front absolute inset-0 border border-border shadow-lg rounded-[var(--radius)] p-8 flex flex-col items-center justify-center bg-surface-raised
+              hover:shadow-md transition-all duration-150"
           >
-            <span className="text-xs font-heading uppercase tracking-wider text-ink/40 mb-4">
+            <span className="text-xs font-body font-medium text-text-tertiary mb-4">
               {frontLabel}
             </span>
-            <span className="font-heading font-bold text-4xl text-ink text-center">
+            <span className="font-heading text-4xl text-text-primary text-center">
               {front}
             </span>
-            <span className="text-xs text-ink/30 mt-6">
+            <span className="text-xs text-text-tertiary mt-6">
               Tap to reveal
             </span>
           </div>
           {/* Back */}
           <div
-            className="flip-card-back absolute inset-0 border-3 border-ink shadow-brutal-lg rounded p-8 flex flex-col items-center justify-center"
+            className="flip-card-back absolute inset-0 border border-border shadow-lg rounded-[var(--radius)] p-8 flex flex-col items-center justify-center"
             style={{ backgroundColor: dataSet.accentColor }}
           >
-            <span className="text-xs font-heading uppercase tracking-wider text-ink/40 mb-4">
+            <span className="text-xs font-body font-medium text-text-primary/60 mb-4">
               {backLabel}
             </span>
-            <span className="font-heading font-bold text-4xl text-ink text-center">
+            <span className="font-heading text-4xl text-text-primary text-center">
               {back}
             </span>
           </div>
@@ -102,39 +102,39 @@ export function FlashcardMode({
         <div className="grid grid-cols-4 gap-3">
           <button
             onClick={() => onRate(1)}
-            className="bg-coral border-3 border-ink shadow-brutal rounded py-3 px-2
-              font-heading font-bold text-sm text-ink cursor-pointer
-              transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm"
+            className="bg-error-light border border-error/30 shadow-sm rounded-[var(--radius-sm)] py-3 px-2
+              font-body font-semibold text-sm text-error cursor-pointer
+              transition-all duration-150 hover:shadow-md active:scale-[0.98]"
           >
             Again
-            <span className="block text-xs font-mono text-ink/50 mt-0.5">1</span>
+            <span className="block text-xs font-mono text-error/60 mt-0.5">1</span>
           </button>
           <button
             onClick={() => onRate(3)}
-            className="bg-salmon border-3 border-ink shadow-brutal rounded py-3 px-2
-              font-heading font-bold text-sm text-ink cursor-pointer
-              transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm"
+            className="bg-warning-light border border-warning/30 shadow-sm rounded-[var(--radius-sm)] py-3 px-2
+              font-body font-semibold text-sm text-warning cursor-pointer
+              transition-all duration-150 hover:shadow-md active:scale-[0.98]"
           >
             Hard
-            <span className="block text-xs font-mono text-ink/50 mt-0.5">2</span>
+            <span className="block text-xs font-mono text-warning/60 mt-0.5">2</span>
           </button>
           <button
             onClick={() => onRate(4)}
-            className="bg-teal border-3 border-ink shadow-brutal rounded py-3 px-2
-              font-heading font-bold text-sm text-ink cursor-pointer
-              transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm"
+            className="bg-success-light border border-success/30 shadow-sm rounded-[var(--radius-sm)] py-3 px-2
+              font-body font-semibold text-sm text-success cursor-pointer
+              transition-all duration-150 hover:shadow-md active:scale-[0.98]"
           >
             Good
-            <span className="block text-xs font-mono text-ink/50 mt-0.5">3</span>
+            <span className="block text-xs font-mono text-success/60 mt-0.5">3</span>
           </button>
           <button
             onClick={() => onRate(5)}
-            className="bg-mint border-3 border-ink shadow-brutal rounded py-3 px-2
-              font-heading font-bold text-sm text-ink cursor-pointer
-              transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm"
+            className="bg-info-light border border-info/30 shadow-sm rounded-[var(--radius-sm)] py-3 px-2
+              font-body font-semibold text-sm text-info cursor-pointer
+              transition-all duration-150 hover:shadow-md active:scale-[0.98]"
           >
             Easy
-            <span className="block text-xs font-mono text-ink/50 mt-0.5">4</span>
+            <span className="block text-xs font-mono text-info/60 mt-0.5">4</span>
           </button>
         </div>
       )}

@@ -5,7 +5,7 @@ export const greekRomanGods: DataSet = {
   title: "Greek & Roman Gods",
   description: "Greek gods and their Roman equivalents",
   icon: "⚡",
-  accentColor: "#FFE66D",
+  accentColor: "#D4A04A",
   promptLabel: "Greek Name",
   matchLabel: "Roman Name",
   isBuiltIn: true,

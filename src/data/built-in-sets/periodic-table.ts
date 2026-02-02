@@ -5,7 +5,7 @@ export const periodicTable: DataSet = {
   title: "Periodic Table Elements",
   description: "All 118 elements and their chemical symbols",
   icon: "⚛️",
-  accentColor: "#AA96DA",
+  accentColor: "#C06840",
   promptLabel: "Element",
   matchLabel: "Symbol",
   isBuiltIn: true,

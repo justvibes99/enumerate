@@ -5,7 +5,7 @@ export const worldCurrencies: DataSet = {
   title: "World Currencies",
   description: "50 countries and their official currencies",
   icon: "💰",
-  accentColor: "#FFE66D",
+  accentColor: "#D4A04A",
   promptLabel: "Country",
   matchLabel: "Currency",
   isBuiltIn: true,

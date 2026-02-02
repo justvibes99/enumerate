@@ -27,7 +27,7 @@ export function StatsPage() {
   if (loading || !dataSet) {
     return (
       <PageContainer>
-        <p className="text-center py-16 font-heading text-xl text-ink/50">
+        <p className="text-center py-16 font-heading text-xl text-text-tertiary">
           Loading...
         </p>
       </PageContainer>
@@ -38,11 +38,11 @@ export function StatsPage() {
     <PageContainer>
       <Link
         to={`/set/${dataSet.id}`}
-        className="text-sm font-heading font-bold text-ink/60 no-underline hover:text-ink"
+        className="text-sm font-body font-medium text-text-secondary no-underline hover:text-text-primary"
       >
         ← Back to {dataSet.title}
       </Link>
-      <h1 className="font-heading font-bold text-3xl text-ink mt-4 mb-6">
+      <h1 className="font-heading text-3xl text-text-primary mt-4 mb-6">
         {dataSet.icon} {dataSet.title} — Stats
       </h1>
 

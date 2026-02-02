@@ -5,7 +5,7 @@ export const worldCapitals: DataSet = {
   title: "World Country Capitals",
   description: "Capital cities of 195 countries around the world",
   icon: "\uD83C\uDF0D",
-  accentColor: "#FF6B6B",
+  accentColor: "#C25B4B",
   promptLabel: "Country",
   matchLabel: "Capital",
   isBuiltIn: true,

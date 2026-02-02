@@ -15,31 +15,31 @@ export function AnswerFeedback({
 }: AnswerFeedbackProps) {
   return (
     <div
-      className={`border-3 border-ink rounded p-6 text-center mb-4 ${
-        correct ? "bg-teal" : close ? "bg-yellow" : "bg-coral"
+      className={`border rounded-[var(--radius)] p-6 text-center mb-4 ${
+        correct ? "bg-success-light border-success/30" : close ? "bg-warning-light border-warning/30" : "bg-error-light border-error/30"
       }`}
     >
       <div className="text-3xl mb-2">
         {correct ? "✓" : close ? "≈" : "✗"}
       </div>
-      <p className="font-heading font-bold text-lg text-ink">
+      <p className="font-heading text-lg text-text-primary">
         {correct ? "Nice!" : close ? "Close!" : "Not quite"}
       </p>
       {!correct && userAnswer && (
-        <p className="text-sm text-ink/70 mt-1">
+        <p className="text-sm text-text-secondary mt-1">
           You answered: <span className="font-bold">{userAnswer}</span>
         </p>
       )}
-      <p className="text-sm text-ink mt-1">
+      <p className="text-sm text-text-primary mt-1">
         Correct answer: <span className="font-bold">{correctAnswer}</span>
       </p>
       <button
         onClick={onNext}
-        className="mt-4 bg-ink text-cream border-3 border-ink rounded px-6 py-2
-          font-heading font-bold text-sm cursor-pointer
-          transition-all duration-100 hover:bg-ink/80"
+        className="mt-4 bg-primary text-white border border-primary rounded-[var(--radius-sm)] px-6 py-2
+          font-body font-semibold text-sm cursor-pointer
+          transition-all duration-150 hover:bg-primary-hover hover:shadow-md active:scale-[0.98]"
       >
-        NEXT
+        Next
       </button>
     </div>
   );

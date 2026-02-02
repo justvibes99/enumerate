@@ -5,7 +5,7 @@ export const classicalComposers: DataSet = {
   title: "Classical Music Composers",
   description: "Famous classical compositions and their composers",
   icon: "🎵",
-  accentColor: "#FFE66D",
+  accentColor: "#D4A04A",
   promptLabel: "Composition",
   matchLabel: "Composer",
   isBuiltIn: true,

@@ -18,7 +18,7 @@ export const romanNumerals: DataSet = {
   title: "Roman Numerals",
   description: "Numbers 1-50 and their Roman numeral equivalents",
   icon: "🏛️",
-  accentColor: "#95E1D3",
+  accentColor: "#6B89A8",
   promptLabel: "Number",
   matchLabel: "Roman Numeral",
   isBuiltIn: true,

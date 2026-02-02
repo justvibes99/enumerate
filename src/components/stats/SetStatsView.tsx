@@ -23,7 +23,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
             cy="80"
             r={radius}
             fill="none"
-            stroke="#FFF8E7"
+            stroke="#F5F3EF"
             strokeWidth="16"
           />
           <circle
@@ -31,7 +31,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
             cy="80"
             r={radius}
             fill="none"
-            stroke="#4ECDC4"
+            stroke="#5B8A72"
             strokeWidth="16"
             strokeDasharray={circumference}
             strokeDashoffset={offset}
@@ -40,7 +40,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-mono font-bold text-3xl text-ink">
+          <span className="font-mono font-bold text-3xl text-text-primary">
             {masteredPct}%
           </span>
         </div>
@@ -48,27 +48,27 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
 
       {/* Breakdown */}
       <div className="grid grid-cols-3 gap-4">
-        <div className="border-3 border-ink rounded bg-cream p-4 text-center shadow-brutal">
-          <div className="font-mono font-bold text-2xl text-ink/40">
+        <div className="border border-border rounded-[var(--radius)] bg-surface-sunken p-4 text-center shadow-sm">
+          <div className="font-mono font-bold text-2xl text-text-tertiary">
             {progress.newCount}
           </div>
-          <div className="text-xs font-heading uppercase tracking-wider text-ink/60 mt-1">
+          <div className="text-xs font-body font-medium text-text-secondary mt-1">
             New
           </div>
         </div>
-        <div className="border-3 border-ink rounded bg-yellow p-4 text-center shadow-brutal">
-          <div className="font-mono font-bold text-2xl text-ink">
+        <div className="border border-border rounded-[var(--radius)] bg-warning-light p-4 text-center shadow-sm">
+          <div className="font-mono font-bold text-2xl text-text-primary">
             {progress.learningCount}
           </div>
-          <div className="text-xs font-heading uppercase tracking-wider text-ink/60 mt-1">
+          <div className="text-xs font-body font-medium text-text-secondary mt-1">
             Learning
           </div>
         </div>
-        <div className="border-3 border-ink rounded bg-teal p-4 text-center shadow-brutal">
-          <div className="font-mono font-bold text-2xl text-ink">
+        <div className="border border-border rounded-[var(--radius)] bg-success-light p-4 text-center shadow-sm">
+          <div className="font-mono font-bold text-2xl text-text-primary">
             {progress.masteredCount}
           </div>
-          <div className="text-xs font-heading uppercase tracking-wider text-ink/60 mt-1">
+          <div className="text-xs font-body font-medium text-text-secondary mt-1">
             Mastered
           </div>
         </div>

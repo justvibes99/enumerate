@@ -29,30 +29,30 @@ export function ItemTable({ dataSet }: ItemTableProps) {
   }
 
   const statusColor = {
-    new: "cream" as const,
-    learning: "yellow" as const,
-    mastered: "teal" as const,
+    new: "neutral" as const,
+    learning: "warning" as const,
+    mastered: "success" as const,
   };
 
   return (
     <div className="mb-8">
-      <h2 className="font-heading font-bold text-xl text-ink mb-4">
+      <h2 className="font-heading text-xl text-text-primary mb-4">
         Items ({dataSet.items.length})
       </h2>
-      <div className="border-3 border-ink rounded overflow-hidden">
+      <div className="border border-border rounded-[var(--radius)] overflow-hidden">
         <table className="w-full">
           <thead>
-            <tr className="bg-ink text-cream">
-              <th className="text-left px-4 py-3 font-heading text-sm font-bold w-12">
+            <tr className="bg-surface-sunken">
+              <th className="text-left px-4 py-3 text-sm font-body font-semibold text-text-secondary w-12">
                 #
               </th>
-              <th className="text-left px-4 py-3 font-heading text-sm font-bold">
+              <th className="text-left px-4 py-3 text-sm font-body font-semibold text-text-secondary">
                 {dataSet.promptLabel}
               </th>
-              <th className="text-left px-4 py-3 font-heading text-sm font-bold">
+              <th className="text-left px-4 py-3 text-sm font-body font-semibold text-text-secondary">
                 {dataSet.matchLabel}
               </th>
-              <th className="text-left px-4 py-3 font-heading text-sm font-bold w-24">
+              <th className="text-left px-4 py-3 text-sm font-body font-semibold text-text-secondary w-24">
                 Status
               </th>
             </tr>
@@ -63,9 +63,9 @@ export function ItemTable({ dataSet }: ItemTableProps) {
               return (
                 <tr
                   key={item.id}
-                  className={`border-t-2 border-ink/10 ${i % 2 === 0 ? "bg-cream" : "bg-white"}`}
+                  className={`border-t border-border ${i % 2 === 0 ? "bg-surface-raised" : "bg-surface-sunken"}`}
                 >
-                  <td className="px-4 py-2 font-mono text-sm text-ink/40">
+                  <td className="px-4 py-2 font-mono text-sm text-text-tertiary">
                     {i + 1}
                   </td>
                   <td className="px-4 py-2 text-sm font-medium">

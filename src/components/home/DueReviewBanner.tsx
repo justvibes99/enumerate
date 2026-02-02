@@ -15,25 +15,25 @@ export function DueReviewBanner({
   const topSet = dueSets.sort((a, b) => b.count - a.count)[0];
 
   return (
-    <div className="bg-yellow border-3 border-ink shadow-brutal-lg rounded p-6 mb-6">
+    <div className="bg-primary-light border border-primary/30 shadow-md rounded-[var(--radius)] p-6 mb-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <p className="font-heading font-bold text-lg text-ink">
+          <p className="font-heading text-lg text-text-primary">
             You have {dueCardCount} card{dueCardCount !== 1 ? "s" : ""} due for
             review across {dueSets.length} set{dueSets.length !== 1 ? "s" : ""}
           </p>
-          <p className="text-sm text-ink/70 mt-1">
+          <p className="text-sm text-text-secondary mt-1">
             Keep your streak going!
           </p>
         </div>
         <Link
           to={`/set/${topSet.dataSetId}`}
-          className="bg-ink text-cream border-3 border-ink rounded px-6 py-3
-            font-heading font-bold text-sm no-underline
-            transition-all duration-100
-            hover:bg-ink/80"
+          className="bg-primary text-white border border-primary rounded-[var(--radius-sm)] px-6 py-3
+            font-body font-semibold text-sm no-underline
+            transition-all duration-150
+            hover:bg-primary-hover hover:shadow-md active:scale-[0.98]"
         >
-          REVIEW NOW
+          Review Now
         </Link>
       </div>
     </div>

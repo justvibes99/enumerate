@@ -19,15 +19,15 @@ export function Card({
   const accentStyle = accentColor
     ? {
         ...style,
-        [`border${accentPosition === "left" ? "Left" : "Top"}Width`]: "4px",
+        [`border${accentPosition === "left" ? "Left" : "Top"}Width`]: "3px",
         [`border${accentPosition === "left" ? "Left" : "Top"}Color`]: accentColor,
       }
     : style;
 
   return (
     <div
-      className={`bg-cream border-3 border-ink shadow-brutal-lg rounded p-6
-        ${hoverable ? "transition-all duration-100 cursor-pointer hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none" : ""}
+      className={`bg-surface-raised border border-border shadow-md rounded-[var(--radius)] p-6
+        ${hoverable ? "transition-all duration-150 cursor-pointer hover:shadow-lg" : ""}
         ${className}`}
       style={accentStyle}
       {...props}

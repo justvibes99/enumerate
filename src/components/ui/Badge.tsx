@@ -1,25 +1,24 @@
 import type { ReactNode } from "react";
 
 interface BadgeProps {
-  color?: "mint" | "teal" | "yellow" | "coral" | "lavender" | "cream";
+  color?: "success" | "warning" | "error" | "info" | "neutral";
   children: ReactNode;
   className?: string;
 }
 
 const colorClasses = {
-  mint: "bg-mint",
-  teal: "bg-teal",
-  yellow: "bg-yellow",
-  coral: "bg-coral",
-  lavender: "bg-lavender",
-  cream: "bg-cream",
+  success: "bg-success-light text-success",
+  warning: "bg-warning-light text-warning",
+  error: "bg-error-light text-error",
+  info: "bg-info-light text-info",
+  neutral: "bg-surface-sunken text-text-secondary",
 };
 
-export function Badge({ color = "mint", children, className = "" }: BadgeProps) {
+export function Badge({ color = "success", children, className = "" }: BadgeProps) {
   return (
     <span
-      className={`inline-block border-2 border-ink rounded px-2 py-0.5
-        text-xs font-heading font-bold uppercase tracking-wider text-ink
+      className={`inline-block rounded-[var(--radius-sm)] px-2.5 py-0.5
+        text-xs font-body font-semibold
         ${colorClasses[color]} ${className}`}
     >
       {children}

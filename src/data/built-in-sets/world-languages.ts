@@ -5,7 +5,7 @@ export const worldLanguages: DataSet = {
   title: "World Languages",
   description: "50 countries and their primary official language",
   icon: "🗣️",
-  accentColor: "#95E1D3",
+  accentColor: "#6B89A8",
   promptLabel: "Country",
   matchLabel: "Language",
   isBuiltIn: true,

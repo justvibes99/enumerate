@@ -23,7 +23,7 @@ export function StudyModeSelector({
     {
       title: "Flashcards",
       description: "Flip cards and self-rate",
-      bg: "bg-coral",
+      bg: "bg-error-light",
       to: `/set/${dataSet.id}/flashcard${dirParam}`,
       enabled: true,
     },
@@ -32,14 +32,14 @@ export function StudyModeSelector({
       description: canMultipleChoice
         ? "Pick from 4 options"
         : "Need at least 4 items",
-      bg: "bg-teal",
+      bg: "bg-success-light",
       to: `/set/${dataSet.id}/multiple-choice${dirParam}`,
       enabled: canMultipleChoice,
     },
     {
       title: "Typed Answer",
       description: "Type the answer from memory",
-      bg: "bg-yellow",
+      bg: "bg-warning-light",
       to: `/set/${dataSet.id}/typed-answer${dirParam}`,
       enabled: true,
     },
@@ -48,7 +48,7 @@ export function StudyModeSelector({
   return (
     <div className="mb-8">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-        <h2 className="font-heading font-bold text-xl text-ink">Study Modes</h2>
+        <h2 className="font-heading text-xl text-text-primary">Study Modes</h2>
         <Toggle
           options={[dirLabel1, dirLabel2]}
           value={direction === "prompt-to-match" ? dirLabel1 : dirLabel2}
@@ -64,25 +64,25 @@ export function StudyModeSelector({
           mode.enabled ? (
             <Link key={mode.title} to={mode.to} className="no-underline">
               <div
-                className={`${mode.bg} border-3 border-ink shadow-brutal-lg rounded p-6 text-center
-                  transition-all duration-100 cursor-pointer
-                  hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none`}
+                className={`${mode.bg} border border-border shadow-sm rounded-[var(--radius)] p-6 text-center
+                  transition-all duration-150 cursor-pointer
+                  hover:shadow-lg active:scale-[0.98]`}
               >
-                <h3 className="font-heading font-bold text-lg text-ink">
+                <h3 className="font-heading text-lg text-text-primary">
                   {mode.title}
                 </h3>
-                <p className="text-sm text-ink/70 mt-1">{mode.description}</p>
+                <p className="text-sm text-text-secondary mt-1">{mode.description}</p>
               </div>
             </Link>
           ) : (
             <div
               key={mode.title}
-              className="bg-cream border-3 border-ink/30 rounded p-6 text-center opacity-50"
+              className="bg-surface-sunken border border-border/50 rounded-[var(--radius)] p-6 text-center opacity-50"
             >
-              <h3 className="font-heading font-bold text-lg text-ink/50">
+              <h3 className="font-heading text-lg text-text-tertiary">
                 {mode.title}
               </h3>
-              <p className="text-sm text-ink/40 mt-1">{mode.description}</p>
+              <p className="text-sm text-text-tertiary mt-1">{mode.description}</p>
             </div>
           ),
         )}

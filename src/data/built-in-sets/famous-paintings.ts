@@ -5,7 +5,7 @@ export const famousPaintings: DataSet = {
   title: "Famous Paintings",
   description: "40 iconic paintings and their artists",
   icon: "🎨",
-  accentColor: "#F38181",
+  accentColor: "#9C958D",
   promptLabel: "Painting",
   matchLabel: "Artist",
   isBuiltIn: true,

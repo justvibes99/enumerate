@@ -27,7 +27,7 @@ export function SetDetailPage() {
   if (loading) {
     return (
       <PageContainer>
-        <p className="text-center py-16 font-heading text-xl text-ink/50">
+        <p className="text-center py-16 font-heading text-xl text-text-tertiary">
           Loading...
         </p>
       </PageContainer>
@@ -38,7 +38,7 @@ export function SetDetailPage() {
     return (
       <PageContainer>
         <div className="text-center py-16">
-          <p className="font-heading text-xl text-ink/50 mb-4">
+          <p className="font-heading text-xl text-text-tertiary mb-4">
             Set not found
           </p>
           <Link to="/">

@@ -19,7 +19,7 @@ export function HomePage() {
     return (
       <PageContainer>
         <div className="text-center py-16">
-          <p className="font-heading text-xl text-ink/50">Loading...</p>
+          <p className="font-heading text-xl text-text-tertiary">Loading...</p>
         </div>
       </PageContainer>
     );

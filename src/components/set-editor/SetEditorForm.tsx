@@ -8,12 +8,12 @@ import { ItemRow } from "./ItemRow";
 import { BulkImport } from "./BulkImport";
 
 const ACCENT_COLORS = [
-  "#4ECDC4",
-  "#FFE66D",
-  "#FF6B6B",
-  "#95E1D3",
-  "#AA96DA",
-  "#F38181",
+  "#5B8A72",
+  "#D4A04A",
+  "#C25B4B",
+  "#6B89A8",
+  "#C06840",
+  "#9C958D",
 ];
 
 interface SetEditorFormProps {
@@ -114,7 +114,7 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
     <div>
       <div className="space-y-4 mb-8">
         <div>
-          <label className="block text-sm font-heading font-bold uppercase tracking-wider text-ink mb-1">
+          <label className="block text-sm font-body font-medium text-text-secondary mb-1">
             Title
           </label>
           <Input
@@ -125,7 +125,7 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
           />
         </div>
         <div>
-          <label className="block text-sm font-heading font-bold uppercase tracking-wider text-ink mb-1">
+          <label className="block text-sm font-body font-medium text-text-secondary mb-1">
             Description
           </label>
           <Textarea
@@ -137,7 +137,7 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-heading font-bold uppercase tracking-wider text-ink mb-1">
+            <label className="block text-sm font-body font-medium text-text-secondary mb-1">
               Prompt Label
             </label>
             <Input
@@ -147,7 +147,7 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
             />
           </div>
           <div>
-            <label className="block text-sm font-heading font-bold uppercase tracking-wider text-ink mb-1">
+            <label className="block text-sm font-body font-medium text-text-secondary mb-1">
               Match Label
             </label>
             <Input
@@ -158,7 +158,7 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-heading font-bold uppercase tracking-wider text-ink mb-2">
+          <label className="block text-sm font-body font-medium text-text-secondary mb-2">
             Accent Color
           </label>
           <div className="flex gap-2">
@@ -166,8 +166,8 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
               <button
                 key={color}
                 onClick={() => setAccentColor(color)}
-                className={`w-10 h-10 rounded border-3 cursor-pointer transition-all duration-100
-                  ${accentColor === color ? "border-ink shadow-brutal scale-110" : "border-ink/30 hover:border-ink"}`}
+                className={`w-10 h-10 rounded-[var(--radius-sm)] border cursor-pointer transition-all duration-150
+                  ${accentColor === color ? "border-text-primary shadow-focus scale-110" : "border-border hover:border-border-strong"}`}
                 style={{ backgroundColor: color }}
               />
             ))}
@@ -178,7 +178,7 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
       {/* Items */}
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="font-heading font-bold text-lg text-ink">
+          <h3 className="font-heading text-lg text-text-primary">
             Items ({items.length})
           </h3>
           <Button
@@ -216,9 +216,9 @@ export function SetEditorForm({ existingSet }: SetEditorFormProps) {
 
       {/* Errors */}
       {errors.length > 0 && (
-        <div className="bg-coral border-3 border-ink rounded p-4 mb-4">
+        <div className="bg-error-light border border-error/30 rounded-[var(--radius)] p-4 mb-4">
           {errors.map((e) => (
-            <p key={e} className="font-bold text-ink text-sm">
+            <p key={e} className="font-bold text-error text-sm">
               {e}
             </p>
           ))}

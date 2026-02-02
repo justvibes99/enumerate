@@ -5,7 +5,7 @@ export const morseCode: DataSet = {
   title: "Morse Code",
   description: "Letters A-Z and digits 0-9 in Morse code",
   icon: "📻",
-  accentColor: "#F38181",
+  accentColor: "#9C958D",
   promptLabel: "Character",
   matchLabel: "Morse Code",
   isBuiltIn: true,

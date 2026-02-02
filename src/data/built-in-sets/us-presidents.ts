@@ -5,7 +5,7 @@ export const usPresidents: DataSet = {
   title: "US Presidents",
   description: "All US presidents in order of their presidency",
   icon: "🇺🇸",
-  accentColor: "#FF6B6B",
+  accentColor: "#C25B4B",
   promptLabel: "Number",
   matchLabel: "President",
   isBuiltIn: true,

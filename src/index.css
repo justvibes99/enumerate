@@ -1,31 +1,63 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #FFF8E7;
-  --color-coral: #FF6B6B;
-  --color-teal: #4ECDC4;
-  --color-yellow: #FFE66D;
-  --color-mint: #95E1D3;
-  --color-salmon: #F38181;
-  --color-lavender: #AA96DA;
-  --color-ink: #2D2D2D;
+  /* Surface colors */
+  --color-surface: #FAFAF8;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-sunken: #F5F3EF;
 
-  --font-heading: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* Border colors */
+  --color-border: #E2DDD5;
+  --color-border-strong: #C4BDB2;
+
+  /* Text colors */
+  --color-text-primary: #2C2825;
+  --color-text-secondary: #6B6560;
+  --color-text-tertiary: #9C958D;
+
+  /* Primary (terracotta) */
+  --color-primary: #C06840;
+  --color-primary-hover: #A85835;
+  --color-primary-light: #FDF0E9;
+
+  /* Success (sage) */
+  --color-success: #5B8A72;
+  --color-success-light: #EEF5F1;
+
+  /* Error */
+  --color-error: #C25B4B;
+  --color-error-light: #FCEEED;
+
+  /* Warning (gold) */
+  --color-warning: #D4A04A;
+  --color-warning-light: #FDF6E8;
+
+  /* Info (muted blue) */
+  --color-info: #6B89A8;
+  --color-info-light: #EFF3F7;
+
+  /* Typography */
+  --font-heading: "DM Serif Display", serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --shadow-brutal: 4px 4px 0px #2D2D2D;
-  --shadow-brutal-lg: 8px 8px 0px #2D2D2D;
-  --shadow-brutal-sm: 2px 2px 0px #2D2D2D;
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(44,40,37,0.06);
+  --shadow-md: 0 2px 8px rgba(44,40,37,0.08), 0 1px 3px rgba(44,40,37,0.06);
+  --shadow-lg: 0 8px 24px rgba(44,40,37,0.10), 0 2px 8px rgba(44,40,37,0.06);
+  --shadow-focus: 0 0 0 3px rgba(192,104,64,0.25);
 
-  --radius: 4px;
+  /* Radius */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
 }
 
 body {
   margin: 0;
   font-family: var(--font-body);
-  background-color: var(--color-cream);
-  color: var(--color-ink);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;

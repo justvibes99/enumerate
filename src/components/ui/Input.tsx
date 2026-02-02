@@ -9,11 +9,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         ref={ref}
-        className={`w-full bg-white border-3 rounded px-4 py-3 text-base font-body text-ink
-          outline-none transition-all duration-100
-          ${error ? "border-coral" : "border-ink"}
-          focus:shadow-brutal focus:border-teal
-          placeholder:text-ink/40
+        className={`w-full bg-surface-sunken border rounded-[var(--radius-sm)] px-4 py-3 text-base font-body text-text-primary
+          outline-none transition-all duration-150
+          ${error ? "border-error" : "border-border"}
+          focus:shadow-focus focus:border-primary
+          placeholder:text-text-tertiary
           ${className}`}
         {...props}
       />
@@ -33,11 +33,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <textarea
         ref={ref}
-        className={`w-full bg-white border-3 rounded px-4 py-3 text-base font-body text-ink
-          outline-none transition-all duration-100 resize-y
-          ${error ? "border-coral" : "border-ink"}
-          focus:shadow-brutal focus:border-teal
-          placeholder:text-ink/40
+        className={`w-full bg-surface-sunken border rounded-[var(--radius-sm)] px-4 py-3 text-base font-body text-text-primary
+          outline-none transition-all duration-150 resize-y
+          ${error ? "border-error" : "border-border"}
+          focus:shadow-focus focus:border-primary
+          placeholder:text-text-tertiary
           ${className}`}
         {...props}
       />

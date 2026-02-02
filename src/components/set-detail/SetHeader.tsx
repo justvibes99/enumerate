@@ -14,29 +14,29 @@ export function SetHeader({ dataSet, progress }: SetHeaderProps) {
     <div className="mb-8">
       <Link
         to="/"
-        className="text-sm font-heading font-bold text-ink/60 no-underline hover:text-ink"
+        className="text-sm font-body font-medium text-text-secondary no-underline hover:text-text-primary"
       >
         ← Back to sets
       </Link>
       <div className="mt-4 flex items-start gap-4">
         <div
-          className="text-5xl p-3 border-3 border-ink rounded shadow-brutal"
+          className="text-5xl p-3 border border-border rounded-[var(--radius)] shadow-sm"
           style={{ backgroundColor: dataSet.accentColor }}
         >
           {dataSet.icon}
         </div>
         <div className="flex-1">
-          <h1 className="font-heading font-bold text-3xl text-ink">
+          <h1 className="font-heading text-3xl text-text-primary">
             {dataSet.title}
           </h1>
-          <p className="text-ink/60 mt-1">{dataSet.description}</p>
+          <p className="text-text-secondary mt-1">{dataSet.description}</p>
           <div className="flex flex-wrap items-center gap-2 mt-3">
-            <Badge color="cream">{dataSet.items.length} items</Badge>
-            <Badge color="mint">
+            <Badge color="neutral">{dataSet.items.length} items</Badge>
+            <Badge color="success">
               {dataSet.promptLabel} → {dataSet.matchLabel}
             </Badge>
             {progress && progress.lastStudiedAt > 0 && (
-              <Badge color="lavender">
+              <Badge color="info">
                 Last studied {formatRelativeDate(progress.lastStudiedAt)}
               </Badge>
             )}
@@ -44,13 +44,13 @@ export function SetHeader({ dataSet, progress }: SetHeaderProps) {
           {progress && (
             <div className="flex gap-4 mt-3">
               <span className="font-mono text-sm">
-                <span className="text-teal font-bold">{progress.masteredCount}</span> mastered
+                <span className="text-success font-bold">{progress.masteredCount}</span> mastered
               </span>
               <span className="font-mono text-sm">
-                <span className="text-yellow font-bold">{progress.learningCount}</span> learning
+                <span className="text-warning font-bold">{progress.learningCount}</span> learning
               </span>
               <span className="font-mono text-sm">
-                <span className="text-ink/40 font-bold">{progress.newCount}</span> new
+                <span className="text-text-tertiary font-bold">{progress.newCount}</span> new
               </span>
             </div>
           )}

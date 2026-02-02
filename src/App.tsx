@@ -14,7 +14,7 @@ export default function App() {
   return (
     <ErrorBoundary>
       <BrowserRouter>
-        <div className="min-h-screen bg-cream">
+        <div className="min-h-screen bg-surface">
           <Header />
           <Routes>
             <Route path="/" element={<HomePage />} />
