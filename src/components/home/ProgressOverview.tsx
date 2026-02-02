@@ -12,10 +12,10 @@ export function ProgressOverview({
   todaySessions,
 }: ProgressOverviewProps) {
   const stats = [
-    { label: "Sets", value: totalSets, bg: "bg-surface-raised" },
-    { label: "Mastered", value: masteredCount, bg: "bg-success-light" },
-    { label: "Streak", value: `${currentStreak}d`, bg: "bg-info-light" },
-    { label: "Today", value: todaySessions, bg: "bg-warning-light" },
+    { label: "Sets", value: totalSets },
+    { label: "Mastered", value: masteredCount },
+    { label: "Streak", value: `${currentStreak}d` },
+    { label: "Today", value: todaySessions },
   ];
 
   return (
@@ -23,7 +23,7 @@ export function ProgressOverview({
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className={`${stat.bg} border border-border rounded-[var(--radius)] shadow-sm p-3 text-center`}
+          className="bg-surface-raised border border-border rounded-[var(--radius)] shadow-sm p-3 text-center"
         >
           <div className="font-mono font-bold text-2xl text-text-primary">
             {stat.value}
