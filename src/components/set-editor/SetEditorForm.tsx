@@ -9,12 +9,12 @@ import { ItemRow } from "./ItemRow";
 import { BulkImport } from "./BulkImport";
 
 const ACCENT_COLORS = [
-  "#5B8A72",
-  "#D4A04A",
-  "#C25B4B",
-  "#6B89A8",
-  "#C06840",
-  "#9C958D",
+  "#2A664D",
+  "#BA7C64",
+  "#7D2827",
+  "#252E48",
+  "#58402F",
+  "#796855",
 ];
 
 interface SetEditorFormProps {

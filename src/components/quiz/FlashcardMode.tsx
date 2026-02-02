@@ -49,9 +49,7 @@ export function FlashcardMode({
       }
       if (flipped) {
         if (e.key === "1") onRate(1);
-        if (e.key === "2") onRate(3);
-        if (e.key === "3") onRate(4);
-        if (e.key === "4") onRate(5);
+        if (e.key === "2") onRate(4);
       }
     };
     window.addEventListener("keydown", handleKey);
@@ -99,42 +97,22 @@ export function FlashcardMode({
 
       {/* Rating buttons (only when flipped) */}
       {flipped && (
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 gap-3">
           <button
             onClick={() => onRate(1)}
-            className="bg-error-light border border-error/30 shadow-sm rounded-[var(--radius-sm)] py-3 px-2
-              font-body font-semibold text-sm text-error cursor-pointer
+            className="bg-error-light border border-error/30 shadow-sm rounded-[var(--radius-sm)] py-4 px-4
+              font-body font-semibold text-base text-error cursor-pointer
               transition-all duration-150 hover:shadow-md active:scale-[0.98]"
           >
-            Again
-            <span className="block text-xs font-mono text-error/60 mt-0.5">1</span>
-          </button>
-          <button
-            onClick={() => onRate(3)}
-            className="bg-warning-light border border-warning/30 shadow-sm rounded-[var(--radius-sm)] py-3 px-2
-              font-body font-semibold text-sm text-warning cursor-pointer
-              transition-all duration-150 hover:shadow-md active:scale-[0.98]"
-          >
-            Hard
-            <span className="block text-xs font-mono text-warning/60 mt-0.5">2</span>
+            Incorrect
           </button>
           <button
             onClick={() => onRate(4)}
-            className="bg-success-light border border-success/30 shadow-sm rounded-[var(--radius-sm)] py-3 px-2
-              font-body font-semibold text-sm text-success cursor-pointer
+            className="bg-success-light border border-success/30 shadow-sm rounded-[var(--radius-sm)] py-4 px-4
+              font-body font-semibold text-base text-success cursor-pointer
               transition-all duration-150 hover:shadow-md active:scale-[0.98]"
           >
-            Good
-            <span className="block text-xs font-mono text-success/60 mt-0.5">3</span>
-          </button>
-          <button
-            onClick={() => onRate(5)}
-            className="bg-info-light border border-info/30 shadow-sm rounded-[var(--radius-sm)] py-3 px-2
-              font-body font-semibold text-sm text-info cursor-pointer
-              transition-all duration-150 hover:shadow-md active:scale-[0.98]"
-          >
-            Easy
-            <span className="block text-xs font-mono text-info/60 mt-0.5">4</span>
+            Correct
           </button>
         </div>
       )}

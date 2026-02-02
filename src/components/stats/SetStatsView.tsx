@@ -23,7 +23,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
             cy="80"
             r={radius}
             fill="none"
-            stroke="#F5F3EF"
+            stroke="#D5C7AC"
             strokeWidth="16"
           />
           <circle
@@ -31,7 +31,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
             cy="80"
             r={radius}
             fill="none"
-            stroke="#5B8A72"
+            stroke="#2A664D"
             strokeWidth="16"
             strokeDasharray={circumference}
             strokeDashoffset={offset}
