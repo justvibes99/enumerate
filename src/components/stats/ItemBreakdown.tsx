@@ -103,7 +103,7 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
                 Match
               </th>
               <SortHeader label="Status" sortKey="status" />
-              <SortHeader label="Correct %" sortKey="ratio" />
+              <SortHeader label="%" sortKey="ratio" />
             </tr>
           </thead>
           <tbody>
