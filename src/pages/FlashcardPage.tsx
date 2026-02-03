@@ -26,6 +26,7 @@ export function FlashcardPage() {
     currentCard,
     loading,
     recordAnswer,
+    forceComplete,
     getItemForCard,
     totalCards,
     currentIndex,
@@ -78,7 +79,7 @@ export function FlashcardPage() {
         totalCards={totalCards}
         correctCount={results.filter((r) => r.correct).length}
         incorrectCount={results.filter((r) => !r.correct).length}
-        setId={dataSet.id}
+        onQuit={forceComplete}
       />
       <FlashcardMode
         item={item}

@@ -26,6 +26,7 @@ export function MultipleChoicePage() {
     currentCard,
     loading,
     recordAnswer,
+    forceComplete,
     getItemForCard,
     totalCards,
     currentIndex,
@@ -82,7 +83,7 @@ export function MultipleChoicePage() {
         totalCards={totalCards}
         correctCount={results.filter((r) => r.correct).length}
         incorrectCount={results.filter((r) => !r.correct).length}
-        setId={dataSet.id}
+        onQuit={forceComplete}
       />
       <MultipleChoiceMode
         item={item}

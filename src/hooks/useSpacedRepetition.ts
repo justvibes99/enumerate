@@ -2,19 +2,14 @@ import { useCallback } from "react";
 import type { ReviewCard, QuizDirection, Item } from "../types";
 import {
   ensureReviewCards,
-  getSettings,
   upsertReviewCard,
 } from "../lib/storage";
 import { sm2 } from "../lib/sm2";
 import { shuffle } from "../lib/utils";
 
-const MAX_SESSION_CARDS = 20;
-
 /**
- * Select cards for a study session:
- * 1. Due cards (most overdue first, then lowest ease)
- * 2. Pad with new cards up to daily limit
- * 3. Cap at MAX_SESSION_CARDS
+ * Select all cards for a study session.
+ * Cards with more incorrect answers appear earlier.
  */
 export function useSpacedRepetition() {
   const selectCards = useCallback(
@@ -24,38 +19,41 @@ export function useSpacedRepetition() {
       items: Item[],
     ): Promise<ReviewCard[]> => {
       const allCards = await ensureReviewCards(dataSetId, direction, items);
-      const settings = await getSettings();
-      const now = Date.now();
 
-      // Separate due and new cards
-      const dueCards = allCards
-        .filter((c) => c.lastReviewedAt > 0 && c.nextReviewDate <= now)
-        .sort((a, b) => {
-          // Most overdue first
-          const overdueA = now - a.nextReviewDate;
-          const overdueB = now - b.nextReviewDate;
-          if (overdueA !== overdueB) return overdueB - overdueA;
-          // Then lowest ease factor
-          return a.easeFactor - b.easeFactor;
-        });
+      // Sort: most struggled cards first (highest incorrect ratio, then lowest ease)
+      // New cards (never reviewed) go after struggled cards but before strong ones
+      const sorted = [...allCards].sort((a, b) => {
+        const totalA = a.correctCount + a.incorrectCount;
+        const totalB = b.correctCount + b.incorrectCount;
+        const ratioA = totalA > 0 ? a.incorrectCount / totalA : 0;
+        const ratioB = totalB > 0 ? b.incorrectCount / totalB : 0;
 
-      const newCards = shuffle(
-        allCards.filter((c) => c.lastReviewedAt === 0),
-      );
+        // New cards get a middle priority
+        const isNewA = a.lastReviewedAt === 0;
+        const isNewB = b.lastReviewedAt === 0;
+        if (isNewA !== isNewB) return isNewA ? 1 : -1;
 
-      const selected: ReviewCard[] = [...dueCards];
+        // Higher incorrect ratio first
+        if (ratioA !== ratioB) return ratioB - ratioA;
+        // Then lowest ease factor
+        return a.easeFactor - b.easeFactor;
+      });
 
-      // Pad with new cards up to daily limit and session max
-      const newCardLimit = Math.min(
-        settings.newCardsPerDay,
-        MAX_SESSION_CARDS - selected.length,
-      );
-      if (newCardLimit > 0) {
-        selected.push(...newCards.slice(0, newCardLimit));
+      // Shuffle within priority tiers to add variety
+      // Tier 1: struggled (has incorrect answers)
+      // Tier 2: new (never reviewed)
+      // Tier 3: strong (all correct)
+      const struggled: ReviewCard[] = [];
+      const newCards: ReviewCard[] = [];
+      const strong: ReviewCard[] = [];
+
+      for (const card of sorted) {
+        if (card.lastReviewedAt === 0) newCards.push(card);
+        else if (card.incorrectCount > 0) struggled.push(card);
+        else strong.push(card);
       }
 
-      // Cap total
-      return shuffle(selected.slice(0, MAX_SESSION_CARDS));
+      return [...shuffle(struggled), ...shuffle(newCards), ...shuffle(strong)];
     },
     [],
   );

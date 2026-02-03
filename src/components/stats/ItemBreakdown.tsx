@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import type { DataSet, ReviewCard } from "../../types";
 import { getReviewCards } from "../../lib/storage";
 import { Badge } from "../ui/Badge";
-import { formatDate } from "../../lib/utils";
 
 interface ItemBreakdownProps {
   dataSet: DataSet;
 }
 
-type SortKey = "prompt" | "status" | "ease" | "nextReview" | "ratio";
+type SortKey = "prompt" | "status" | "ratio";
 
 export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
   const [cards, setCards] = useState<Map<string, ReviewCard>>(new Map());
@@ -26,8 +25,7 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
   }, [dataSet.id]);
 
   const getStatus = (card?: ReviewCard) => {
-    if (!card || card.lastReviewedAt === 0) return "new";
-    if (card.interval >= 21) return "mastered";
+    if (card && card.repetitions >= 5) return "mastered";
     return "learning";
   };
 
@@ -50,16 +48,10 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
         cmp = a.prompt.localeCompare(b.prompt);
         break;
       case "status": {
-        const order = { new: 0, learning: 1, mastered: 2 };
+        const order = { learning: 0, mastered: 1 };
         cmp = order[getStatus(cardA)] - order[getStatus(cardB)];
         break;
       }
-      case "ease":
-        cmp = (cardA?.easeFactor ?? 2.5) - (cardB?.easeFactor ?? 2.5);
-        break;
-      case "nextReview":
-        cmp = (cardA?.nextReviewDate ?? 0) - (cardB?.nextReviewDate ?? 0);
-        break;
       case "ratio": {
         const ratioA =
           cardA && cardA.correctCount + cardA.incorrectCount > 0
@@ -78,7 +70,6 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
   });
 
   const statusColor = {
-    new: "neutral" as const,
     learning: "warning" as const,
     mastered: "success" as const,
   };
@@ -112,8 +103,6 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
                 Match
               </th>
               <SortHeader label="Status" sortKey="status" />
-              <SortHeader label="Ease" sortKey="ease" />
-              <SortHeader label="Next Review" sortKey="nextReview" />
               <SortHeader label="Correct %" sortKey="ratio" />
             </tr>
           </thead>
@@ -136,14 +125,6 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
                   <td className="px-3 py-2">{item.match}</td>
                   <td className="px-3 py-2">
                     <Badge color={statusColor[status]}>{status}</Badge>
-                  </td>
-                  <td className="px-3 py-2 font-body">
-                    {card ? card.easeFactor.toFixed(1) : "—"}
-                  </td>
-                  <td className="px-3 py-2 font-body text-xs">
-                    {card && card.nextReviewDate > 0
-                      ? formatDate(card.nextReviewDate)
-                      : "—"}
                   </td>
                   <td className="px-3 py-2 font-body">
                     {total > 0 ? `${ratio}%` : "—"}

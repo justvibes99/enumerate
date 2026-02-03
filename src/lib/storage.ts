@@ -232,22 +232,19 @@ export async function getSetProgress(
   );
 
   let masteredCount = 0;
-  let learningCount = 0;
   let lastStudiedAt = 0;
 
   for (const card of cards) {
     if (card.lastReviewedAt > lastStudiedAt) {
       lastStudiedAt = card.lastReviewedAt;
     }
-    if (card.lastReviewedAt === 0) continue;
-    if (card.interval >= 21) {
+    if (card.repetitions >= 5) {
       masteredCount++;
-    } else {
-      learningCount++;
     }
   }
 
-  const newCount = totalItems - masteredCount - learningCount;
+  const learningCount = totalItems - masteredCount;
+  const newCount = 0;
 
   const sessions = await getQuizSessions(dataSetId);
   const { current, longest } = calculateStreak(sessions);
@@ -324,7 +321,7 @@ export async function getGlobalStreak(): Promise<{
 export async function getGlobalMasteredCount(): Promise<number> {
   const db = await getDB();
   const all = await db.getAll("reviewCards");
-  return all.filter((c) => c.interval >= 21).length;
+  return all.filter((c) => c.repetitions >= 5).length;
 }
 
 // ---- Settings ----

@@ -21,15 +21,13 @@ export function ItemTable({ dataSet }: ItemTableProps) {
     });
   }, [dataSet.id]);
 
-  function getStatus(itemId: string): "new" | "learning" | "mastered" {
+  function getStatus(itemId: string): "learning" | "mastered" {
     const card = cardMap.get(itemId);
-    if (!card || card.lastReviewedAt === 0) return "new";
-    if (card.interval >= 21) return "mastered";
+    if (card && card.repetitions >= 5) return "mastered";
     return "learning";
   }
 
   const statusColor = {
-    new: "neutral" as const,
     learning: "warning" as const,
     mastered: "success" as const,
   };

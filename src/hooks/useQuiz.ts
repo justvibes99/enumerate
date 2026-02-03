@@ -44,6 +44,8 @@ export function useQuiz(
 
   const currentCard = state?.cards[state.currentIndex] ?? null;
 
+  const [sessionId] = useState(() => crypto.randomUUID());
+
   const recordAnswer = useCallback(
     async (quality: number, userAnswer?: string, timeSpentMs: number = 0) => {
       if (!state || !currentCard) return;
@@ -61,21 +63,19 @@ export function useQuiz(
       const nextIndex = state.currentIndex + 1;
       const isComplete = nextIndex >= state.cards.length;
 
-      if (isComplete) {
-        // Save session
-        await saveQuizSession({
-          id: crypto.randomUUID(),
-          dataSetId: state.dataSetId,
-          mode: state.mode,
-          direction: state.direction,
-          startedAt: state.startedAt,
-          completedAt: Date.now(),
-          totalCards: state.cards.length,
-          correctCount: newResults.filter((r) => r.correct).length,
-          incorrectCount: newResults.filter((r) => !r.correct).length,
-          itemResults: newResults,
-        });
-      }
+      // Save session after every answer so progress is never lost
+      await saveQuizSession({
+        id: sessionId,
+        dataSetId: state.dataSetId,
+        mode: state.mode,
+        direction: state.direction,
+        startedAt: state.startedAt,
+        completedAt: isComplete ? Date.now() : 0,
+        totalCards: state.cards.length,
+        correctCount: newResults.filter((r) => r.correct).length,
+        incorrectCount: newResults.filter((r) => !r.correct).length,
+        itemResults: newResults,
+      });
 
       setState({
         ...state,
@@ -84,7 +84,7 @@ export function useQuiz(
         isComplete,
       });
     },
-    [state, currentCard, updateCard],
+    [state, currentCard, updateCard, sessionId],
   );
 
   const getItemForCard = useCallback(
@@ -95,11 +95,20 @@ export function useQuiz(
     [dataSet],
   );
 
+  const forceComplete = useCallback(() => {
+    if (!state) return;
+    setState({
+      ...state,
+      isComplete: true,
+    });
+  }, [state]);
+
   return {
     state,
     loading,
     currentCard,
     recordAnswer,
+    forceComplete,
     getItemForCard,
     totalCards: state?.cards.length ?? 0,
     currentIndex: state?.currentIndex ?? 0,

@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { SegmentedProgressBar } from "../ui/ProgressBar";
 import { Button } from "../ui/Button";
 import { Modal } from "../ui/Modal";
@@ -9,7 +8,7 @@ interface QuizHeaderProps {
   totalCards: number;
   correctCount: number;
   incorrectCount: number;
-  setId: string;
+  onQuit: () => void;
 }
 
 export function QuizHeader({
@@ -17,9 +16,8 @@ export function QuizHeader({
   totalCards,
   correctCount,
   incorrectCount,
-  setId,
+  onQuit,
 }: QuizHeaderProps) {
-  const navigate = useNavigate();
   const [showQuit, setShowQuit] = useState(false);
 
   return (
@@ -46,18 +44,17 @@ export function QuizHeader({
       <Modal
         open={showQuit}
         onClose={() => setShowQuit(false)}
-        title="Quit Session?"
+        title="End Session?"
       >
         <p className="text-text-primary mb-4">
-          Your progress in this session won't be saved. Cards you've already
-          answered have been recorded.
+          Your answers so far have been saved. End this session and see your results?
         </p>
         <div className="flex gap-3">
           <Button
-            variant="danger"
-            onClick={() => navigate(`/set/${setId}`)}
+            variant="primary"
+            onClick={onQuit}
           >
-            Quit
+            End Session
           </Button>
           <Button variant="secondary" onClick={() => setShowQuit(false)}>
             Continue

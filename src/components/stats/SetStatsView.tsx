@@ -47,15 +47,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
       </div>
 
       {/* Breakdown */}
-      <div className="grid grid-cols-3 gap-4">
-        <div className="border border-border rounded-[var(--radius)] bg-surface-raised p-4 text-center shadow-sm">
-          <div className="font-body font-bold text-2xl text-text-tertiary">
-            {progress.newCount}
-          </div>
-          <div className="text-xs font-body font-medium text-text-secondary mt-1">
-            New
-          </div>
-        </div>
+      <div className="grid grid-cols-2 gap-4">
         <div className="border border-border rounded-[var(--radius)] bg-surface-raised p-4 text-center shadow-sm">
           <div className="font-body font-bold text-2xl text-text-primary">
             {progress.learningCount}
