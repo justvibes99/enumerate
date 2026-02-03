@@ -65,7 +65,7 @@ export function ItemTable({ dataSet }: ItemTableProps) {
                   key={item.id}
                   className={`border-t border-border ${i % 2 === 0 ? "bg-surface-raised" : "bg-surface-sunken"}`}
                 >
-                  <td className="px-4 py-2 font-mono text-sm text-text-tertiary">
+                  <td className="px-4 py-2 font-body text-sm text-text-tertiary">
                     {i + 1}
                   </td>
                   <td className="px-4 py-2 text-sm font-medium">

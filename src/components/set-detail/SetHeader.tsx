@@ -37,13 +37,13 @@ export function SetHeader({ dataSet, progress }: SetHeaderProps) {
           </div>
           {progress && (
             <div className="flex gap-4 mt-3">
-              <span className="font-mono text-sm">
+              <span className="font-body text-sm">
                 <span className="text-success font-bold">{progress.masteredCount}</span> mastered
               </span>
-              <span className="font-mono text-sm">
+              <span className="font-body text-sm">
                 <span className="text-warning font-bold">{progress.learningCount}</span> learning
               </span>
-              <span className="font-mono text-sm">
+              <span className="font-body text-sm">
                 <span className="text-text-tertiary font-bold">{progress.newCount}</span> new
               </span>
             </div>

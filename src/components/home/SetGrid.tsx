@@ -23,11 +23,11 @@ function SetCard({ dataSet }: SetCardProps) {
           </h3>
           <p className="text-sm text-text-secondary mt-1">{dataSet.description}</p>
           <div className="flex items-center gap-3 mt-2">
-            <span className="font-mono text-xs text-text-tertiary">
+            <span className="font-body text-xs text-text-tertiary">
               {dataSet.items.length} items
             </span>
             {progress && (
-              <span className="font-mono text-xs text-text-tertiary">
+              <span className="font-body text-xs text-text-tertiary">
                 {masteredPct}% mastered
               </span>
             )}

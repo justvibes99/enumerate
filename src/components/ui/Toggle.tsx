@@ -8,7 +8,7 @@ interface ToggleProps {
 export function Toggle({ options, value, onChange, className = "" }: ToggleProps) {
   return (
     <div
-      className={`flex border border-border rounded-[var(--radius-sm)] overflow-hidden bg-surface-sunken ${className}`}
+      className={`flex border border-border rounded-[var(--radius-sm)] overflow-hidden bg-surface-raised ${className}`}
     >
       {options.map((option) => (
         <button

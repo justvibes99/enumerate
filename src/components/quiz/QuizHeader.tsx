@@ -39,7 +39,7 @@ export function QuizHeader({
             total={totalCards}
           />
         </div>
-        <span className="font-mono text-sm text-text-secondary whitespace-nowrap">
+        <span className="font-body text-sm text-text-secondary whitespace-nowrap">
           {currentIndex + 1} / {totalCards}
         </span>
       </div>

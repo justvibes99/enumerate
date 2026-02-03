@@ -40,7 +40,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-mono font-bold text-3xl text-text-primary">
+          <span className="font-body font-bold text-3xl text-text-primary">
             {masteredPct}%
           </span>
         </div>
@@ -48,24 +48,24 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
 
       {/* Breakdown */}
       <div className="grid grid-cols-3 gap-4">
-        <div className="border border-border rounded-[var(--radius)] bg-surface-sunken p-4 text-center shadow-sm">
-          <div className="font-mono font-bold text-2xl text-text-tertiary">
+        <div className="border border-border rounded-[var(--radius)] bg-surface-raised p-4 text-center shadow-sm">
+          <div className="font-body font-bold text-2xl text-text-tertiary">
             {progress.newCount}
           </div>
           <div className="text-xs font-body font-medium text-text-secondary mt-1">
             New
           </div>
         </div>
-        <div className="border border-border rounded-[var(--radius)] bg-warning-light p-4 text-center shadow-sm">
-          <div className="font-mono font-bold text-2xl text-text-primary">
+        <div className="border border-border rounded-[var(--radius)] bg-surface-raised p-4 text-center shadow-sm">
+          <div className="font-body font-bold text-2xl text-text-primary">
             {progress.learningCount}
           </div>
           <div className="text-xs font-body font-medium text-text-secondary mt-1">
             Learning
           </div>
         </div>
-        <div className="border border-border rounded-[var(--radius)] bg-success-light p-4 text-center shadow-sm">
-          <div className="font-mono font-bold text-2xl text-text-primary">
+        <div className="border border-border rounded-[var(--radius)] bg-surface-raised p-4 text-center shadow-sm">
+          <div className="font-body font-bold text-2xl text-text-primary">
             {progress.masteredCount}
           </div>
           <div className="text-xs font-body font-medium text-text-secondary mt-1">

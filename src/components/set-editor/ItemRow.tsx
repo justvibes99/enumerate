@@ -23,7 +23,7 @@ export function ItemRow({
 }: ItemRowProps) {
   return (
     <div className="flex items-center gap-2">
-      <span className="font-mono text-sm text-text-tertiary w-8 text-right shrink-0">
+      <span className="font-body text-sm text-text-tertiary w-8 text-right shrink-0">
         {index + 1}
       </span>
       <Input

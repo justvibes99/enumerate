@@ -137,15 +137,15 @@ export function ItemBreakdown({ dataSet }: ItemBreakdownProps) {
                   <td className="px-3 py-2">
                     <Badge color={statusColor[status]}>{status}</Badge>
                   </td>
-                  <td className="px-3 py-2 font-mono">
+                  <td className="px-3 py-2 font-body">
                     {card ? card.easeFactor.toFixed(1) : "—"}
                   </td>
-                  <td className="px-3 py-2 font-mono text-xs">
+                  <td className="px-3 py-2 font-body text-xs">
                     {card && card.nextReviewDate > 0
                       ? formatDate(card.nextReviewDate)
                       : "—"}
                   </td>
-                  <td className="px-3 py-2 font-mono">
+                  <td className="px-3 py-2 font-body">
                     {total > 0 ? `${ratio}%` : "—"}
                   </td>
                 </tr>

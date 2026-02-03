@@ -25,7 +25,7 @@ export function ProgressOverview({
           key={stat.label}
           className="bg-surface-raised border border-success rounded-[var(--radius)] shadow-sm p-3 text-center"
         >
-          <div className="font-mono font-bold text-2xl text-text-primary">
+          <div className="font-body font-bold text-2xl text-text-primary">
             {stat.value}
           </div>
           <div className="text-xs font-body font-medium text-text-secondary mt-1">

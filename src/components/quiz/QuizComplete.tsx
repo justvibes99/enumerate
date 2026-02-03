@@ -36,7 +36,7 @@ export function QuizComplete({ dataSet, results }: QuizCompleteProps) {
         </p>
         <div className="flex justify-center gap-6">
           <div className="text-center">
-            <div className="font-mono font-bold text-3xl text-success">
+            <div className="font-body font-bold text-3xl text-success">
               {correct}
             </div>
             <div className="text-xs font-body font-medium text-text-secondary">
@@ -44,7 +44,7 @@ export function QuizComplete({ dataSet, results }: QuizCompleteProps) {
             </div>
           </div>
           <div className="text-center">
-            <div className="font-mono font-bold text-3xl text-error">
+            <div className="font-body font-bold text-3xl text-error">
               {incorrect}
             </div>
             <div className="text-xs font-body font-medium text-text-secondary">
