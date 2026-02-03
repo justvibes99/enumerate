@@ -10,11 +10,11 @@ import { BulkImport } from "./BulkImport";
 
 const ACCENT_COLORS = [
   "#2A664D",
-  "#BA7C64",
   "#7D2827",
-  "#496462",
+  "#252E48",
   "#58402F",
-  "#96AA91",
+  "#6D4E4B",
+  "#3B4229",
 ];
 
 interface SetEditorFormProps {

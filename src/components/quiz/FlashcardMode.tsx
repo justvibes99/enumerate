@@ -100,7 +100,7 @@ export function FlashcardMode({
         <div className="grid grid-cols-2 gap-3">
           <button
             onClick={() => onRate(1)}
-            className="bg-error-light border border-error/30 shadow-sm rounded-[var(--radius-sm)] py-4 px-4
+            className="bg-surface-raised border border-border shadow-sm rounded-[var(--radius-sm)] py-4 px-4
               font-body font-semibold text-base text-error cursor-pointer
               transition-all duration-150 hover:shadow-md active:scale-[0.98]"
           >
@@ -108,7 +108,7 @@ export function FlashcardMode({
           </button>
           <button
             onClick={() => onRate(4)}
-            className="bg-success-light border border-success/30 shadow-sm rounded-[var(--radius-sm)] py-4 px-4
+            className="bg-surface-raised border border-border shadow-sm rounded-[var(--radius-sm)] py-4 px-4
               font-body font-semibold text-base text-success cursor-pointer
               transition-all duration-150 hover:shadow-md active:scale-[0.98]"
           >
