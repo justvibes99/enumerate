@@ -33,7 +33,7 @@ export function StreakCalendar({ dataSetId }: StreakCalendarProps) {
   const maxCount = Math.max(1, ...Array.from(dayCounts.values()));
 
   function getColor(count: number): string {
-    if (count === 0) return "#D5C7AC"; // surface-sunken
+    if (count === 0) return "#E8E2D6"; // surface-sunken
     const ratio = count / maxCount;
     if (ratio < 0.33) return "#D5E3DB"; // success-light
     if (ratio < 0.66) return "#2A664D"; // success
@@ -61,7 +61,7 @@ export function StreakCalendar({ dataSetId }: StreakCalendarProps) {
         </div>
         <div className="flex items-center gap-2 mt-2 text-xs text-text-secondary">
           <span>Less</span>
-          <div className="w-3 h-3 rounded-sm border border-border" style={{ backgroundColor: "#D5C7AC" }} />
+          <div className="w-3 h-3 rounded-sm border border-border" style={{ backgroundColor: "#E8E2D6" }} />
           <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#D5E3DB" }} />
           <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#2A664D" }} />
           <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "#7D2827" }} />

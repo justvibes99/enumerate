@@ -23,7 +23,7 @@ export function ProgressOverview({
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="bg-surface-raised border border-border rounded-[var(--radius)] shadow-sm p-3 text-center"
+          className="bg-surface-raised border border-success rounded-[var(--radius)] shadow-sm p-3 text-center"
         >
           <div className="font-mono font-bold text-2xl text-text-primary">
             {stat.value}

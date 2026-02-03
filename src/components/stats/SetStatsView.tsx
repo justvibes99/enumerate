@@ -23,7 +23,7 @@ export function SetStatsView({ progress }: SetStatsViewProps) {
             cy="80"
             r={radius}
             fill="none"
-            stroke="#D5C7AC"
+            stroke="#E8E2D6"
             strokeWidth="16"
           />
           <circle
