@@ -15,8 +15,8 @@ export function AnswerFeedback({
 }: AnswerFeedbackProps) {
   return (
     <div
-      className={`border rounded-[var(--radius)] p-4 text-center mb-4 ${
-        correct ? "bg-success-light border-success/30" : close ? "bg-warning-light border-warning/30" : "bg-error-light border-error/30"
+      className={`border-2 rounded-[var(--radius)] p-4 text-center mb-4 bg-surface-raised ${
+        correct ? "border-success" : close ? "border-warning" : "border-error"
       }`}
     >
       <div className="text-3xl mb-2">

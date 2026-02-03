@@ -43,16 +43,13 @@ export function ItemTable({ dataSet }: ItemTableProps) {
         <table className="w-full">
           <thead>
             <tr className="bg-surface-sunken">
-              <th className="text-left px-4 py-3 text-sm font-body font-semibold text-text-secondary w-12">
-                #
-              </th>
-              <th className="text-left px-4 py-3 text-sm font-body font-semibold text-text-secondary">
+              <th className="text-left px-3 py-3 text-sm font-body font-semibold text-text-secondary">
                 {dataSet.promptLabel}
               </th>
-              <th className="text-left px-4 py-3 text-sm font-body font-semibold text-text-secondary">
+              <th className="text-left px-3 py-3 text-sm font-body font-semibold text-text-secondary">
                 {dataSet.matchLabel}
               </th>
-              <th className="text-left px-4 py-3 text-sm font-body font-semibold text-text-secondary w-24">
+              <th className="text-right px-3 py-3 text-sm font-body font-semibold text-text-secondary">
                 Status
               </th>
             </tr>
@@ -65,14 +62,11 @@ export function ItemTable({ dataSet }: ItemTableProps) {
                   key={item.id}
                   className={`border-t border-border ${i % 2 === 0 ? "bg-surface-raised" : "bg-surface-sunken"}`}
                 >
-                  <td className="px-4 py-2 font-body text-sm text-text-tertiary">
-                    {i + 1}
-                  </td>
-                  <td className="px-4 py-2 text-sm font-medium">
+                  <td className="px-3 py-2 text-sm font-medium">
                     {item.prompt}
                   </td>
-                  <td className="px-4 py-2 text-sm">{item.match}</td>
-                  <td className="px-4 py-2">
+                  <td className="px-3 py-2 text-sm">{item.match}</td>
+                  <td className="px-3 py-2 text-right">
                     <Badge color={statusColor[status]}>{status}</Badge>
                   </td>
                 </tr>
