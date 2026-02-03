@@ -245,7 +245,7 @@ export function SetEditorForm({ existingSet, aiData }: SetEditorFormProps) {
       )}
 
       {/* Actions */}
-      <div className="flex gap-3">
+      <div className="flex justify-center gap-3">
         <Button onClick={handleSave}>Save Set</Button>
         <Button variant="secondary" onClick={() => navigate(-1)}>
           Cancel
