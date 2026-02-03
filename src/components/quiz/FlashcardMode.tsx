@@ -16,6 +16,7 @@ export function FlashcardMode({
   onRate,
 }: FlashcardModeProps) {
   const [flipped, setFlipped] = useState(false);
+  const [animating, setAnimating] = useState(true);
 
   const front =
     direction === "prompt-to-match" ? item.prompt : item.match;
@@ -30,9 +31,14 @@ export function FlashcardMode({
       ? dataSet.matchLabel
       : dataSet.promptLabel;
 
-  // Reset flip on new card
+  // Reset flip on new card without animation
   useEffect(() => {
+    setAnimating(false);
     setFlipped(false);
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setAnimating(true));
+    });
+    return () => cancelAnimationFrame(raf);
   }, [item.id]);
 
   const handleFlip = useCallback(() => {
@@ -64,7 +70,7 @@ export function FlashcardMode({
         onClick={handleFlip}
         style={{ minHeight: "300px" }}
       >
-        <div className={`flip-card-inner relative w-full ${flipped ? "flipped" : ""}`} style={{ minHeight: "300px" }}>
+        <div className={`flip-card-inner relative w-full ${flipped ? "flipped" : ""}`} style={{ minHeight: "300px", transition: animating ? undefined : "none" }}>
           {/* Front */}
           <div
             className="flip-card-front absolute inset-0 border border-border shadow-lg rounded-[var(--radius)] p-6 flex flex-col items-center justify-center bg-surface-raised

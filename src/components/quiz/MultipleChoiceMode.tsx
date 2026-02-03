@@ -71,8 +71,8 @@ export function MultipleChoiceMode({
         {options.map((option) => {
           let classes = "bg-surface-raised border-border";
           if (answered) {
-            if (option === correctAnswer) classes = "bg-success-light border-success/30";
-            else if (option === selected) classes = "bg-error-light border-error/30";
+            if (option === correctAnswer) classes = "bg-surface-raised border-success border-2";
+            else if (option === selected) classes = "bg-surface-raised border-error border-2";
           }
 
           return (
