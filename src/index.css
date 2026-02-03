@@ -18,23 +18,23 @@
   /* Primary (burgundy) */
   --color-primary: #7D2827;
   --color-primary-hover: #47211C;
-  --color-primary-light: #EDE1DE;
+  --color-primary-light: #F0EBE7;
 
   /* Success (forest green) */
   --color-success: #2A664D;
-  --color-success-light: #D5E3DB;
+  --color-success-light: #E4EBE6;
 
   /* Error (dark red) */
   --color-error: #7D2827;
-  --color-error-light: #EDE1DE;
+  --color-error-light: #F0EBE7;
 
   /* Warning (copper) */
   --color-warning: #BA7C64;
-  --color-warning-light: #EBE0D8;
+  --color-warning-light: #EDE8E2;
 
   /* Info (sage) */
   --color-info: #496462;
-  --color-info-light: #DCE4E0;
+  --color-info-light: #E5EAE7;
 
   /* Typography */
   --font-heading: "DM Serif Display", serif;

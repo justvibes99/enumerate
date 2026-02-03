@@ -23,7 +23,7 @@ export function StudyModeSelector({
     {
       title: "Flashcards",
       description: "Flip cards and self-rate",
-      bg: "bg-error-light",
+      bg: "bg-surface-raised",
       to: `/set/${dataSet.id}/flashcard${dirParam}`,
       enabled: true,
     },
@@ -32,14 +32,14 @@ export function StudyModeSelector({
       description: canMultipleChoice
         ? "Pick from 4 options"
         : "Need at least 4 items",
-      bg: "bg-success-light",
+      bg: "bg-surface-raised",
       to: `/set/${dataSet.id}/multiple-choice${dirParam}`,
       enabled: canMultipleChoice,
     },
     {
       title: "Typed Answer",
       description: "Type the answer from memory",
-      bg: "bg-warning-light",
+      bg: "bg-surface-raised",
       to: `/set/${dataSet.id}/typed-answer${dirParam}`,
       enabled: true,
     },

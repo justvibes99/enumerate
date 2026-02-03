@@ -222,14 +222,15 @@ export function SetEditorForm({ existingSet, aiData }: SetEditorFormProps) {
             />
           ))}
         </div>
-        <Button
-          variant="primary"
-          size="sm"
-          className="mt-3"
-          onClick={addItem}
-        >
-          + Add Item
-        </Button>
+        <div className="flex justify-end mt-3">
+          <Button
+            variant="success"
+            size="sm"
+            onClick={addItem}
+          >
+            + Add Item
+          </Button>
+        </div>
       </div>
 
       {/* Errors */}
